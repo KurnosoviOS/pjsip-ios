@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # see http://stackoverflow.com/a/3915420/318790
+
+FOLDER_PJSIP="pjsip-include"
+
 function realpath { echo $(cd $(dirname "$1"); pwd)/$(basename "$1"); }
 
 BUILD_DIR=$(realpath "build")
@@ -23,7 +26,7 @@ copy_libs () {
     if [ ! -d pjlib/lib-${DST}/ ]; then
         mkdir pjlib/lib-${DST}/
     fi
-    cp pjlib/lib/libpj-arm-apple-darwin9.a pjlib/lib-${DST}/libpj-arm-apple-darwin9.a
+    cp pjlib/lib/libpj-${DST}-apple-darwin_ios.a pjlib/lib-${DST}/libpj-${DST}-apple-darwin_ios.a
 
     if [ -d pjlib-util/lib-${DST}/ ]; then
         rm -rf pjlib-util/lib-${DST}/
@@ -31,7 +34,7 @@ copy_libs () {
     if [ ! -d pjlib-util/lib-${DST}/ ]; then
         mkdir pjlib-util/lib-${DST}/
     fi
-    cp pjlib-util/lib/libpjlib-util-arm-apple-darwin9.a pjlib-util/lib-${DST}/libpjlib-util-arm-apple-darwin9.a
+    cp pjlib-util/lib/libpjlib-util-${DST}-apple-darwin_ios.a pjlib-util/lib-${DST}/libpjlib-util-${DST}-apple-darwin_ios.a
 
     if [ -d pjmedia/lib-${DST}/ ]; then
         rm -rf pjmedia/lib-${DST}/
@@ -39,11 +42,11 @@ copy_libs () {
     if [ ! -d pjmedia/lib-${DST}/ ]; then
         mkdir pjmedia/lib-${DST}/
     fi
-    cp pjmedia/lib/libpjmedia-arm-apple-darwin9.a pjmedia/lib-${DST}/libpjmedia-arm-apple-darwin9.a
-    cp pjmedia/lib/libpjmedia-audiodev-arm-apple-darwin9.a pjmedia/lib-${DST}/libpjmedia-audiodev-arm-apple-darwin9.a
-    cp pjmedia/lib/libpjmedia-codec-arm-apple-darwin9.a pjmedia/lib-${DST}/libpjmedia-codec-arm-apple-darwin9.a
-    cp pjmedia/lib/libpjmedia-videodev-arm-apple-darwin9.a pjmedia/lib-${DST}/libpjmedia-videodev-arm-apple-darwin9.a
-    cp pjmedia/lib/libpjsdp-arm-apple-darwin9.a pjmedia/lib-${DST}/libpjsdp-arm-apple-darwin9.a
+    cp pjmedia/lib/libpjmedia-${DST}-apple-darwin_ios.a pjmedia/lib-${DST}/libpjmedia-${DST}-apple-darwin_ios.a
+    cp pjmedia/lib/libpjmedia-audiodev-${DST}-apple-darwin_ios.a pjmedia/lib-${DST}/libpjmedia-audiodev-${DST}-apple-darwin_ios.a
+    cp pjmedia/lib/libpjmedia-codec-${DST}-apple-darwin_ios.a pjmedia/lib-${DST}/libpjmedia-codec-${DST}-apple-darwin_ios.a
+    cp pjmedia/lib/libpjmedia-videodev-${DST}-apple-darwin_ios.a pjmedia/lib-${DST}/libpjmedia-videodev-${DST}-apple-darwin_ios.a
+    cp pjmedia/lib/libpjsdp-${DST}-apple-darwin_ios.a pjmedia/lib-${DST}/libpjsdp-${DST}-apple-darwin_ios.a
 
     if [ -d pjnath/lib-${DST}/ ]; then
         rm -rf pjnath/lib-${DST}/
@@ -51,7 +54,7 @@ copy_libs () {
     if [ ! -d pjnath/lib-${DST}/ ]; then
         mkdir pjnath/lib-${DST}/
     fi
-    cp pjnath/lib/libpjnath-arm-apple-darwin9.a pjnath/lib-${DST}/libpjnath-arm-apple-darwin9.a
+    cp pjnath/lib/libpjnath-${DST}-apple-darwin_ios.a pjnath/lib-${DST}/libpjnath-${DST}-apple-darwin_ios.a
 
     if [ -d pjsip/lib-${DST}/ ]; then
         rm -rf pjsip/lib-${DST}/
@@ -59,11 +62,11 @@ copy_libs () {
     if [ ! -d pjsip/lib-${DST}/ ]; then
         mkdir pjsip/lib-${DST}/
     fi
-    cp pjsip/lib/libpjsip-arm-apple-darwin9.a pjsip/lib-${DST}/libpjsip-arm-apple-darwin9.a
-    cp pjsip/lib/libpjsip-simple-arm-apple-darwin9.a pjsip/lib-${DST}/libpjsip-simple-arm-apple-darwin9.a
-    cp pjsip/lib/libpjsip-ua-arm-apple-darwin9.a pjsip/lib-${DST}/libpjsip-ua-arm-apple-darwin9.a
-    cp pjsip/lib/libpjsua-arm-apple-darwin9.a pjsip/lib-${DST}/libpjsua-arm-apple-darwin9.a
-    cp pjsip/lib/libpjsua2-arm-apple-darwin9.a pjsip/lib-${DST}/libpjsua2-arm-apple-darwin9.a
+    cp pjsip/lib/libpjsip-${DST}-apple-darwin_ios.a pjsip/lib-${DST}/libpjsip-${DST}-apple-darwin_ios.a
+    cp pjsip/lib/libpjsip-simple-${DST}-apple-darwin_ios.a pjsip/lib-${DST}/libpjsip-simple-${DST}-apple-darwin_ios.a
+    cp pjsip/lib/libpjsip-ua-${DST}-apple-darwin_ios.a pjsip/lib-${DST}/libpjsip-ua-${DST}-apple-darwin_ios.a
+    cp pjsip/lib/libpjsua-${DST}-apple-darwin_ios.a pjsip/lib-${DST}/libpjsua-${DST}-apple-darwin_ios.a
+    cp pjsip/lib/libpjsua2-${DST}-apple-darwin_ios.a pjsip/lib-${DST}/libpjsua2-${DST}-apple-darwin_ios.a
 
     if [ -d third_party/lib-${DST}/ ]; then
         rm -rf third_party/lib-${DST}/
@@ -71,147 +74,147 @@ copy_libs () {
     if [ ! -d third_party/lib-${DST}/ ]; then
         mkdir third_party/lib-${DST}/
     fi
-    cp third_party/lib/libg7221codec-arm-apple-darwin9.a third_party/lib-${DST}/libg7221codec-arm-apple-darwin9.a
-    cp third_party/lib/libgsmcodec-arm-apple-darwin9.a third_party/lib-${DST}/libgsmcodec-arm-apple-darwin9.a
-    cp third_party/lib/libilbccodec-arm-apple-darwin9.a third_party/lib-${DST}/libilbccodec-arm-apple-darwin9.a
-    cp third_party/lib/libresample-arm-apple-darwin9.a third_party/lib-${DST}/libresample-arm-apple-darwin9.a
-    cp third_party/lib/libspeex-arm-apple-darwin9.a third_party/lib-${DST}/libspeex-arm-apple-darwin9.a
-    cp third_party/lib/libsrtp-arm-apple-darwin9.a third_party/lib-${DST}/libsrtp-arm-apple-darwin9.a
+    cp third_party/lib/libg7221codec-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libg7221codec-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libgsmcodec-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libgsmcodec-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libilbccodec-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libilbccodec-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libresample-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libresample-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libspeex-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libspeex-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libsrtp-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libsrtp-${DST}-apple-darwin_ios.a
 }
 
 lipo_libs () {
-xcrun -sdk iphoneos lipo -arch i386   pjlib/lib-i386/libpj-arm-apple-darwin9.a \
-                         -arch x86_64 pjlib/lib-x86_64/libpj-arm-apple-darwin9.a \
-                         -arch armv7  pjlib/lib-armv7/libpj-arm-apple-darwin9.a \
-                         -arch armv7s pjlib/lib-armv7s/libpj-arm-apple-darwin9.a \
-                         -arch arm64  pjlib/lib-arm64/libpj-arm-apple-darwin9.a \
-                         -create -output lib/libpj-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjlib/lib-i386/libpj-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjlib/lib-x86_64/libpj-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjlib/lib-armv7/libpj-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjlib/lib-armv7s/libpj-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjlib/lib-arm64/libpj-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpj-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjlib-util/lib-i386/libpjlib-util-arm-apple-darwin9.a \
-                         -arch x86_64 pjlib-util/lib-x86_64/libpjlib-util-arm-apple-darwin9.a \
-                         -arch armv7  pjlib-util/lib-armv7/libpjlib-util-arm-apple-darwin9.a \
-                         -arch armv7s pjlib-util/lib-armv7s/libpjlib-util-arm-apple-darwin9.a \
-                         -arch arm64  pjlib-util/lib-arm64/libpjlib-util-arm-apple-darwin9.a \
-                         -create -output lib/libpjlib-util-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjlib-util/lib-i386/libpjlib-util-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjlib-util/lib-x86_64/libpjlib-util-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjlib-util/lib-armv7/libpjlib-util-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjlib-util/lib-armv7s/libpjlib-util-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjlib-util/lib-arm64/libpjlib-util-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjlib-util-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-arm-apple-darwin9.a \
-                         -arch x86_64   pjmedia/lib-x86_64/libpjmedia-arm-apple-darwin9.a \
-                         -arch armv7  pjmedia/lib-armv7/libpjmedia-arm-apple-darwin9.a \
-                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-arm-apple-darwin9.a \
-                         -arch arm64  pjmedia/lib-arm64/libpjmedia-arm-apple-darwin9.a \
-                         -create -output lib/libpjmedia-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-i386-apple-darwin_ios.a \
+                         -arch x86_64   pjmedia/lib-x86_64/libpjmedia-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjmedia/lib-armv7/libpjmedia-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjmedia/lib-arm64/libpjmedia-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjmedia-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-audiodev-arm-apple-darwin9.a \
-                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-audiodev-arm-apple-darwin9.a \
-                         -arch armv7  pjmedia/lib-armv7/libpjmedia-audiodev-arm-apple-darwin9.a \
-                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-audiodev-arm-apple-darwin9.a \
-                         -arch arm64  pjmedia/lib-arm64/libpjmedia-audiodev-arm-apple-darwin9.a \
-                         -create -output lib/libpjmedia-audiodev-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-audiodev-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-audiodev-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjmedia/lib-armv7/libpjmedia-audiodev-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-audiodev-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjmedia/lib-arm64/libpjmedia-audiodev-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjmedia-audiodev-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-codec-arm-apple-darwin9.a \
-                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-codec-arm-apple-darwin9.a \
-                         -arch armv7  pjmedia/lib-armv7/libpjmedia-codec-arm-apple-darwin9.a \
-                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-codec-arm-apple-darwin9.a \
-                         -arch arm64  pjmedia/lib-arm64/libpjmedia-codec-arm-apple-darwin9.a \
-                         -create -output lib/libpjmedia-codec-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-codec-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-codec-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjmedia/lib-armv7/libpjmedia-codec-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-codec-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjmedia/lib-arm64/libpjmedia-codec-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjmedia-codec-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-videodev-arm-apple-darwin9.a \
-                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-videodev-arm-apple-darwin9.a \
-                         -arch armv7  pjmedia/lib-armv7/libpjmedia-videodev-arm-apple-darwin9.a \
-                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-videodev-arm-apple-darwin9.a \
-                         -arch arm64 pjmedia/lib-arm64/libpjmedia-videodev-arm-apple-darwin9.a \
-                         -create -output lib/libpjmedia-videodev-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjmedia-videodev-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjmedia/lib-x86_64/libpjmedia-videodev-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjmedia/lib-armv7/libpjmedia-videodev-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjmedia/lib-armv7s/libpjmedia-videodev-armv7s-apple-darwin_ios.a \
+                         -arch arm64 pjmedia/lib-arm64/libpjmedia-videodev-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjmedia-videodev-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjsdp-arm-apple-darwin9.a \
-                         -arch x86_64 pjmedia/lib-x86_64/libpjsdp-arm-apple-darwin9.a \
-                         -arch armv7  pjmedia/lib-armv7/libpjsdp-arm-apple-darwin9.a \
-                         -arch armv7s pjmedia/lib-armv7s/libpjsdp-arm-apple-darwin9.a \
-                         -arch arm64  pjmedia/lib-arm64/libpjsdp-arm-apple-darwin9.a \
-                         -create -output lib/libpjsdp-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjmedia/lib-i386/libpjsdp-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjmedia/lib-x86_64/libpjsdp-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjmedia/lib-armv7/libpjsdp-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjmedia/lib-armv7s/libpjsdp-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjmedia/lib-arm64/libpjsdp-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsdp-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjnath/lib-i386/libpjnath-arm-apple-darwin9.a \
-                         -arch x86_64 pjnath/lib-x86_64/libpjnath-arm-apple-darwin9.a \
-                         -arch armv7  pjnath/lib-armv7/libpjnath-arm-apple-darwin9.a \
-                         -arch armv7s pjnath/lib-armv7s/libpjnath-arm-apple-darwin9.a \
-                         -arch arm64  pjnath/lib-arm64/libpjnath-arm-apple-darwin9.a \
-                         -create -output lib/libpjnath-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjnath/lib-i386/libpjnath-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjnath/lib-x86_64/libpjnath-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjnath/lib-armv7/libpjnath-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjnath/lib-armv7s/libpjnath-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjnath/lib-arm64/libpjnath-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjnath-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-arm-apple-darwin9.a \
-                         -arch x86_64 pjsip/lib-x86_64/libpjsip-arm-apple-darwin9.a \
-                         -arch armv7  pjsip/lib-armv7/libpjsip-arm-apple-darwin9.a \
-                         -arch armv7s pjsip/lib-armv7s/libpjsip-arm-apple-darwin9.a \
-                         -arch arm64 pjsip/lib-arm64/libpjsip-arm-apple-darwin9.a \
-                         -create -output lib/libpjsip-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjsip/lib-x86_64/libpjsip-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjsip/lib-armv7/libpjsip-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjsip/lib-armv7s/libpjsip-armv7s-apple-darwin_ios.a \
+                         -arch arm64 pjsip/lib-arm64/libpjsip-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsip-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-simple-arm-apple-darwin9.a \
-                         -arch x86_64 pjsip/lib-x86_64/libpjsip-simple-arm-apple-darwin9.a \
-                         -arch armv7  pjsip/lib-armv7/libpjsip-simple-arm-apple-darwin9.a \
-                         -arch armv7s pjsip/lib-armv7s/libpjsip-simple-arm-apple-darwin9.a \
-                         -arch arm64  pjsip/lib-arm64/libpjsip-simple-arm-apple-darwin9.a \
-                         -create -output lib/libpjsip-simple-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-simple-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjsip/lib-x86_64/libpjsip-simple-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjsip/lib-armv7/libpjsip-simple-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjsip/lib-armv7s/libpjsip-simple-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjsip/lib-arm64/libpjsip-simple-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsip-simple-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-ua-arm-apple-darwin9.a \
-                         -arch x86_64 pjsip/lib-x86_64/libpjsip-ua-arm-apple-darwin9.a \
-                         -arch armv7  pjsip/lib-armv7/libpjsip-ua-arm-apple-darwin9.a \
-                         -arch armv7s pjsip/lib-armv7s/libpjsip-ua-arm-apple-darwin9.a \
-                         -arch arm64  pjsip/lib-arm64/libpjsip-ua-arm-apple-darwin9.a \
-                         -create -output lib/libpjsip-ua-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsip-ua-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjsip/lib-x86_64/libpjsip-ua-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjsip/lib-armv7/libpjsip-ua-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjsip/lib-armv7s/libpjsip-ua-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjsip/lib-arm64/libpjsip-ua-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsip-ua-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsua-arm-apple-darwin9.a \
-                         -arch x86_64 pjsip/lib-x86_64/libpjsua-arm-apple-darwin9.a \
-                         -arch armv7  pjsip/lib-armv7/libpjsua-arm-apple-darwin9.a \
-                         -arch armv7s pjsip/lib-armv7s/libpjsua-arm-apple-darwin9.a \
-                         -arch arm64  pjsip/lib-arm64/libpjsua-arm-apple-darwin9.a \
-                         -create -output lib/libpjsua-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsua-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjsip/lib-x86_64/libpjsua-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjsip/lib-armv7/libpjsua-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjsip/lib-armv7s/libpjsua-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjsip/lib-arm64/libpjsua-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsua-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsua2-arm-apple-darwin9.a \
-                         -arch x86_64 pjsip/lib-x86_64/libpjsua2-arm-apple-darwin9.a \
-                         -arch armv7  pjsip/lib-armv7/libpjsua2-arm-apple-darwin9.a \
-                         -arch armv7s pjsip/lib-armv7s/libpjsua2-arm-apple-darwin9.a \
-                         -arch arm64  pjsip/lib-arm64/libpjsua2-arm-apple-darwin9.a \
-                         -create -output lib/libpjsua2-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   pjsip/lib-i386/libpjsua2-i386-apple-darwin_ios.a \
+                         -arch x86_64 pjsip/lib-x86_64/libpjsua2-x86_64-apple-darwin_ios.a \
+                         -arch armv7  pjsip/lib-armv7/libpjsua2-armv7-apple-darwin_ios.a \
+                         -arch armv7s pjsip/lib-armv7s/libpjsua2-armv7s-apple-darwin_ios.a \
+                         -arch arm64  pjsip/lib-arm64/libpjsua2-arm64-apple-darwin_ios.a \
+                         -create -output lib/libpjsua2-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libg7221codec-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libg7221codec-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libg7221codec-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libg7221codec-arm-apple-darwin9.a \
-                         -arch arm64  third_party/lib-arm64/libg7221codec-arm-apple-darwin9.a \
-                         -create -output lib/libg7221codec-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libg7221codec-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libg7221codec-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libg7221codec-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libg7221codec-armv7s-apple-darwin_ios.a \
+                         -arch arm64  third_party/lib-arm64/libg7221codec-arm64-apple-darwin_ios.a \
+                         -create -output lib/libg7221codec-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libgsmcodec-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libgsmcodec-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libgsmcodec-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libgsmcodec-arm-apple-darwin9.a \
-                         -arch arm64  third_party/lib-arm64/libgsmcodec-arm-apple-darwin9.a \
-                         -create -output lib/libgsmcodec-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libgsmcodec-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libgsmcodec-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libgsmcodec-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libgsmcodec-armv7s-apple-darwin_ios.a \
+                         -arch arm64  third_party/lib-arm64/libgsmcodec-arm64-apple-darwin_ios.a \
+                         -create -output lib/libgsmcodec-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libilbccodec-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libilbccodec-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libilbccodec-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libilbccodec-arm-apple-darwin9.a \
-                         -arch arm64  third_party/lib-arm64/libilbccodec-arm-apple-darwin9.a \
-                         -create -output lib/libilbccodec-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libilbccodec-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libilbccodec-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libilbccodec-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libilbccodec-armv7s-apple-darwin_ios.a \
+                         -arch arm64  third_party/lib-arm64/libilbccodec-arm64-apple-darwin_ios.a \
+                         -create -output lib/libilbccodec-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libresample-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libresample-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libresample-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libresample-arm-apple-darwin9.a \
-                         -arch arm64  third_party/lib-arm64/libresample-arm-apple-darwin9.a \
-                         -create -output lib/libresample-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libresample-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libresample-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libresample-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libresample-armv7s-apple-darwin_ios.a \
+                         -arch arm64  third_party/lib-arm64/libresample-arm64-apple-darwin_ios.a \
+                         -create -output lib/libresample-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libspeex-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libspeex-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libspeex-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libspeex-arm-apple-darwin9.a \
-                         -arch arm64 third_party/lib-arm64/libspeex-arm-apple-darwin9.a \
-                         -create -output lib/libspeex-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libspeex-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libspeex-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libspeex-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libspeex-armv7s-apple-darwin_ios.a \
+                         -arch arm64 third_party/lib-arm64/libspeex-arm64-apple-darwin_ios.a \
+                         -create -output lib/libspeex-arm-apple-darwin_ios.a
 
-xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libsrtp-arm-apple-darwin9.a \
-                         -arch x86_64 third_party/lib-x86_64/libsrtp-arm-apple-darwin9.a \
-                         -arch armv7  third_party/lib-armv7/libsrtp-arm-apple-darwin9.a \
-                         -arch armv7s third_party/lib-armv7s/libsrtp-arm-apple-darwin9.a \
-                         -arch arm64 third_party/lib-arm64/libsrtp-arm-apple-darwin9.a \
-                         -create -output lib/libsrtp-arm-apple-darwin9.a
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libsrtp-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libsrtp-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libsrtp-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libsrtp-armv7s-apple-darwin_ios.a \
+                         -arch arm64 third_party/lib-arm64/libsrtp-arm64-apple-darwin_ios.a \
+                         -create -output lib/libsrtp-arm-apple-darwin_ios.a
 }
 
 
@@ -276,14 +279,14 @@ function armv7s() { _build "armv7s"; }
 function arm64() { _build "arm64"; }
 function i386() {
   export DEVPATH="`xcrun -sdk iphonesimulator --show-sdk-platform-path`/Developer"
-  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=6.0"
-  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=6.0"
+  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=8.0"
+  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=8.0"
   _build "i386"
 }
 function x86_64() {
   export DEVPATH="`xcrun -sdk iphonesimulator --show-sdk-platform-path`/Developer"
-  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=6.0"
-  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=6.0"
+  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=8.0"
+  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=8.0"
   _build "x86_64"
 }
 
@@ -293,6 +296,13 @@ echo "Making universal lib..."
 make distclean > /dev/null
 lipo_libs
 
-cp lib/* ../../Pod/pjsip-lib/
+cp -r pjlib/include/* ../../Pod/$FOLDER_PJSIP
+cp -r pjlib-util/include/* ../../Pod/$FOLDER_PJSIP
+cp -r pjmedia/include/* ../../Pod/$FOLDER_PJSIP
+cp -r pjnath/include/* ../../Pod/$FOLDER_PJSIP
+cp -r pjsip/include/* ../../Pod/$FOLDER_PJSIP
+
+cp lib/* ../../Pod/pjsip-lib/FOLDER_PJSIP
+
 
 echo "Done"

@@ -1,4 +1,4 @@
-/* $Id: pjsua_internal.h 4750 2014-02-19 04:11:43Z bennylp $ */
+/* $Id: pjsua_internal.h 5288 2016-05-10 14:58:41Z riza $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -142,6 +142,9 @@ struct pjsua_call
     unsigned		 med_prov_cnt;/**< Number of provisional media.	    */
     pjsua_call_media	 media_prov[PJSUA_MAX_CALL_MEDIA];
 				    /**< Array of provisional media.	    */
+    pj_bool_t		 med_update_success;
+    				    /**< Is media update successful?	    */
+    pj_bool_t		 hanging_up;/**< Is call in the process of hangup?  */
 
     int			 audio_idx; /**< First active audio media.	    */
     pj_mutex_t          *med_ch_mutex;/**< Media channel callback's mutex.  */
@@ -186,6 +189,13 @@ struct pjsua_call
     pj_timer_entry	 reinv_timer;  /**< Reinvite retry timer.	    */
     pj_bool_t	 	 reinv_pending;/**< Pending until CONFIRMED state.  */
     pj_bool_t	 	 reinv_ice_sent;/**< Has reinvite for ICE upd sent? */
+    pjsip_rx_data	*incoming_data;/**< Cloned incoming call rdata.
+				            On pjsua2, when handling incoming 
+					    call, onCreateMediaTransport() will
+					    not be called since the call isn't
+					    created yet. This temporary 
+					    variable is used to handle such 
+					    case, see ticket #1916.	    */
 };
 
 
@@ -219,6 +229,8 @@ typedef struct pjsua_acc
     pj_str_t         reg_contact;   /**< Contact header for REGISTER.
 				         It may be different than acc
 				         contact if outbound is used    */
+    pj_bool_t	     contact_rewritten;
+				    /**< Contact rewrite has been done? */
     pjsip_host_port  via_addr;      /**< Address for Via header         */
     pjsip_transport *via_tp;        /**< Transport associated with
                                          the Via address                */
@@ -473,10 +485,17 @@ struct pjsua_data
     pjmedia_master_port	*null_snd;  /**< Master port for null sound.	*/
     pjmedia_port	*null_port; /**< Null port.			*/
     pj_bool_t		 snd_is_on; /**< Media flow is currently active */
+    unsigned		 snd_mode;  /**< Sound device mode.		*/
 
     /* Video device */
     pjmedia_vid_dev_index vcap_dev;  /**< Capture device ID.		*/
     pjmedia_vid_dev_index vrdr_dev;  /**< Playback device ID.		*/
+
+    /* For keeping video device settings */
+#if PJSUA_HAS_VIDEO
+    pj_uint32_t		  vid_caps[PJMEDIA_VID_DEV_MAX_DEVS];
+    pjmedia_vid_dev_param vid_param[PJMEDIA_VID_DEV_MAX_DEVS];
+#endif
 
     /* File players: */
     unsigned		 player_cnt;/**< Number of file players.	*/
@@ -597,6 +616,7 @@ pj_status_t normalize_route_uri(pj_pool_t *pool, pj_str_t *uri);
 
 /* acc use stun? */
 pj_bool_t pjsua_sip_acc_is_using_stun(pjsua_acc_id acc_id);
+pj_bool_t pjsua_media_acc_is_using_stun(pjsua_acc_id acc_id);
 
 /* Get local transport address suitable to be used for Via or Contact address
  * to send request to the specified destination URI.
