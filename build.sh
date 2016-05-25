@@ -296,13 +296,13 @@ echo "Making universal lib..."
 make distclean > /dev/null
 lipo_libs
 
-cp -r pjlib/include/* ../../Pod/$FOLDER_PJSIP
-cp -r pjlib-util/include/* ../../Pod/$FOLDER_PJSIP
-cp -r pjmedia/include/* ../../Pod/$FOLDER_PJSIP
-cp -r pjnath/include/* ../../Pod/$FOLDER_PJSIP
-cp -r pjsip/include/* ../../Pod/$FOLDER_PJSIP
+cp -R pjlib/include/* ../../Pod/$FOLDER_PJSIP/
+cp -R pjlib-util/include/* ../../Pod/$FOLDER_PJSIP/
+cp -R pjmedia/include/* ../../Pod/$FOLDER_PJSIP/
+cp -R pjnath/include/* ../../Pod/$FOLDER_PJSIP/
+cp -R pjsip/include/* ../../Pod/$FOLDER_PJSIP/
 
-cp lib/* ../../Pod/pjsip-lib/FOLDER_PJSIP
+cp lib/* ../../Pod/pjsip-lib/
 
 
 echo "Done"
