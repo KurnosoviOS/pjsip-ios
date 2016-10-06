@@ -6,6 +6,9 @@
  * See https://trac.pjsip.org/repos/ticket/1589 for more info
  */
 #define PJ_HAS_FLOATING_POINT		1
+#define PJ_HAS_SSL_SOCK				1
+#define PJ_HAS_IPV6					1
+#define PJSIP_TLS_KEEP_ALIVE_INTERVAL				20
 
 /*
  * PJMEDIA settings
