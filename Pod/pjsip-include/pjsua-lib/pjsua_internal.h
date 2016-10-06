@@ -1,4 +1,4 @@
-/* $Id: pjsua_internal.h 5288 2016-05-10 14:58:41Z riza $ */
+/* $Id: pjsua_internal.h 5337 2016-06-08 02:49:56Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -172,8 +172,9 @@ struct pjsua_call
                 pjsua_msg_data  *msg_data;/**< Headers for outgoing INVITE. */
                 pj_bool_t        hangup;  /**< Call is hangup?              */
             } out_call;
-            struct {
+            struct {		
                 call_answer      answers;/**< A list of call answers.       */
+		pj_bool_t	 hangup;/**< Call is hangup?		    */
 		pjsip_dialog	*replaced_dlg; /**< Replaced dialog.	    */
             } inc_call;
         } call_var;
@@ -282,6 +283,8 @@ typedef struct pjsua_acc
     pjsip_dialog    *mwi_dlg;	    /**< Dialog for MWI sub.		*/
 
     pj_uint16_t      next_rtp_port; /**< Next RTP port to be used.      */
+    pjsip_transport_type_e tp_type; /**< Transport type (for local acc or
+				         transport binding)		*/
 } pjsua_acc;
 
 
@@ -366,6 +369,8 @@ typedef struct pjsua_stun_resolve
     void		*token;	    /**< App token	    */
     pj_stun_resolve_cb	 cb;	    /**< App callback	    */
     pj_bool_t		 blocking;  /**< Blocking?	    */
+    pj_thread_t		*waiter;    /**< Waiting thread	    */
+    pj_timer_entry	 timer;	    /**< Destroy timer	    */
     pj_status_t		 status;    /**< Session status	    */
     pj_sockaddr		 addr;	    /**< Result		    */
     pj_stun_sock	*stun_sock; /**< Testing STUN sock  */
@@ -435,7 +440,8 @@ struct pjsua_data
     pj_sockaddr		 stun_srv;  /**< Resolved STUN server address	*/
     pj_status_t		 stun_status; /**< STUN server status.		*/
     pjsua_stun_resolve	 stun_res;  /**< List of pending STUN resolution*/
-    pj_dns_resolver	*resolver;  /**< DNS resolver.			*/
+    unsigned		 stun_srv_idx; /**< Resolved STUN server index	*/
+    pj_dns_resolver	*resolver;  /**< DNS resolver.			*/   
 
     /* Detected NAT type */
     pj_stun_nat_type	 nat_type;	/**< NAT type.			*/
@@ -606,7 +612,7 @@ void pjsua_set_state(pjsua_state new_state);
  * STUN resolution
  */
 /* Resolve the STUN server */
-pj_status_t resolve_stun_server(pj_bool_t wait);
+pj_status_t resolve_stun_server(pj_bool_t wait, pj_bool_t retry_if_cur_error);
 
 /** 
  * Normalize route URI (check for ";lr" and append one if it doesn't
@@ -617,6 +623,9 @@ pj_status_t normalize_route_uri(pj_pool_t *pool, pj_str_t *uri);
 /* acc use stun? */
 pj_bool_t pjsua_sip_acc_is_using_stun(pjsua_acc_id acc_id);
 pj_bool_t pjsua_media_acc_is_using_stun(pjsua_acc_id acc_id);
+
+/* acc use IPv6? */
+pj_bool_t pjsua_sip_acc_is_using_ipv6(pjsua_acc_id acc_id);
 
 /* Get local transport address suitable to be used for Via or Contact address
  * to send request to the specified destination URI.

@@ -11,7 +11,7 @@ if [ ! -d ${BUILD_DIR} ]; then
     mkdir ${BUILD_DIR}
 fi
 
-PJSIP_URL="http://www.pjsip.org/release/2.5/pjproject-2.5.tar.bz2"
+PJSIP_URL="http://www.pjsip.org/release/2.5.5/pjproject-2.5.5.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
 OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/build-libssl.sh"
 OPENSSL_DIR=${BUILD_DIR}/openssl
@@ -218,17 +218,17 @@ xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libsrtp-i386-apple-da
 }
 
 
-if [ ! -f ${OPENSSL_SH} ]; then
-    echo "Downloading openssl..."
-    curl -# --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
-fi
+# if [ ! -f ${OPENSSL_SH} ]; then
+#     echo "Downloading openssl..."
+#     curl -# --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
+# fi
 
-if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
-    pushd . > /dev/null
-    cd ${OPENSSL_DIR}
-    /bin/sh ${OPENSSL_SH}
-    popd > /dev/null
-fi
+# if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
+#     pushd . > /dev/null
+#     cd ${OPENSSL_DIR}
+#     /bin/sh ${OPENSSL_SH} --version="1.0.2h" 
+#     popd > /dev/null
+# fi
 
 if [ ! -f ${PJSIP_ARCHIVE} ]; then
   echo "Downloading pjsip..."
@@ -253,9 +253,9 @@ popd > /dev/null
 echo "Creating config.h..."
 cp config_site.h ${PJSIP_DIR}/pjlib/include/pj/config_site.h
 
-export CFLAGS="-I${OPENSSL_DIR}/include"
-export LDFLAGS="-L${OPENSSL_DIR}/lib"
-configure="./configure-iphone --with-ssl=${OPENSSL_DIR}"
+export CFLAGS="-I/Users/maximkeegan/Documents/OpenSSL-for-iPhone/include -O0 -g"
+export LDFLAGS="-L/Users/maximkeegan/Documents/OpenSSL-for-iPhone/lib -O0 -g"
+configure="./configure-iphone --with-ssl=\"/Users/maximkeegan/Documents/OpenSSL-for-iPhone\""
 
 cd ${PJSIP_DIR}
 
@@ -266,7 +266,7 @@ function _build() {
   echo "Building for ${ARCH}..."
 
   make distclean > ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl="/Users/maximkeegan/Documents/OpenSSL-for-iPhone" >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
@@ -279,14 +279,14 @@ function armv7s() { _build "armv7s"; }
 function arm64() { _build "arm64"; }
 function i386() {
   export DEVPATH="`xcrun -sdk iphonesimulator --show-sdk-platform-path`/Developer"
-  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=8.0"
-  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=8.0"
+  export CFLAGS="-I/Users/maximkeegan/Documents/OpenSSL-for-iPhone/include -O0 -g -m32 -mios-simulator-version-min=8.0"
+  export LDFLAGS="-L/Users/maximkeegan/Documents/OpenSSL-for-iPhone/lib -O0 -g -m32 -mios-simulator-version-min=8.0"
   _build "i386"
 }
 function x86_64() {
   export DEVPATH="`xcrun -sdk iphonesimulator --show-sdk-platform-path`/Developer"
-  export CFLAGS="-I${OPENSSL_DIR}/include -O2 -m32 -mios-simulator-version-min=8.0"
-  export LDFLAGS="-L${OPENSSL_DIR}/lib -O2 -m32 -mios-simulator-version-min=8.0"
+  export CFLAGS="-I/Users/maximkeegan/Documents/OpenSSL-for-iPhone/include -O0 -g -m32 -mios-simulator-version-min=8.0"
+  export LDFLAGS="-L/Users/maximkeegan/Documents/OpenSSL-for-iPhone/lib -O0 -g -m32 -mios-simulator-version-min=8.0"
   _build "x86_64"
 }
 
