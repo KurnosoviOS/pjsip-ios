@@ -239,23 +239,23 @@ PJSIP_NAME=`tar tzf ${PJSIP_ARCHIVE} | sed -e 's@/.*@@' | uniq`
 PJSIP_DIR=${BUILD_DIR}/${PJSIP_NAME}
 echo "Using ${PJSIP_NAME}..."
 
-if [ -d ${PJSIP_DIR} ]; then
-    echo "Cleaning up..."
-    rm -rf ${PJSIP_DIR}
-fi
+# if [ -d ${PJSIP_DIR} ]; then
+#     echo "Cleaning up..."
+#     rm -rf ${PJSIP_DIR}
+# fi
 
-echo "Unarchiving..."
-pushd . > /dev/null
-cd ${BUILD_DIR}
-tar -xf ${PJSIP_ARCHIVE}
-popd > /dev/null
+# echo "Unarchiving..."
+# pushd . > /dev/null
+# cd ${BUILD_DIR}
+# tar -xf ${PJSIP_ARCHIVE}
+# popd > /dev/null
 
 echo "Creating config.h..."
 cp config_site.h ${PJSIP_DIR}/pjlib/include/pj/config_site.h
 
 export CFLAGS="-I/Users/maximkeegan/Documents/OpenSSL-for-iPhone/include -O0 -g"
 export LDFLAGS="-L/Users/maximkeegan/Documents/OpenSSL-for-iPhone/lib -O0 -g"
-configure="./configure-iphone --with-ssl=\"/Users/maximkeegan/Documents/OpenSSL-for-iPhone\""
+configure="./configure-iphone --with-ssl=\"/Users/maximkeegan/Documents/OpenSSL-for-iPhone\" --disable-libwebrtc --disable-ffmpeg"
 
 cd ${PJSIP_DIR}
 
@@ -266,7 +266,7 @@ function _build() {
   echo "Building for ${ARCH}..."
 
   make distclean > ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl="/Users/maximkeegan/Documents/OpenSSL-for-iPhone" >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl="/Users/maximkeegan/Documents/OpenSSL-for-iPhone" --disable-libwebrtc --disable-ffmpeg >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
