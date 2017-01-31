@@ -19,8 +19,12 @@ DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
 
 PJSIP_URL="http://www.pjsip.org/release/2.5.5/pjproject-2.5.5.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
-# OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/build-libssl.sh"
-OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/da61c4b088f93944d51a1b90af965922f30a07d2/build-libssl.sh" #version locked couse OpenSSL-for-iPhone moved scripts to another folder. Suppose to add them to download. scripts/ 
+
+
+LOOP_ARCHS_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/scripts/build-loop-archs.sh"
+LOOP_TARGETS_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/scripts/build-loop-targets.sh"
+
+OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/build-libssl.sh"
 
 OPENSSL_DIR=${BUILD_DIR}/openssl
 OPENSSL_SH=${OPENSSL_DIR}/`basename ${OPENSSL_DIR}`
@@ -225,9 +229,10 @@ xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libsrtp-i386-apple-da
                          -create -output lib/libsrtp-arm-apple-darwin_ios.a
 }
 
-
 if [ ! -f ${OPENSSL_SH} ]; then
     echo "Downloading openssl..."
+    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_TARGETS_URL") ${LOOP_TARGETS_URL}
+    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_ARCHS_URL") ${LOOP_ARCHS_URL}
     curl -# --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
 fi
 
