@@ -1,4 +1,4 @@
-/* $Id: config.h 5524 2017-01-17 00:50:09Z ming $ */
+/* $Id: config.h 5315 2016-05-25 04:31:29Z riza $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  *
@@ -45,14 +45,10 @@ PJ_BEGIN_DECL
  * This setting controls the maximum number of formats that can be
  * supported by a video device.
  *
- * Default: 128 (for Android), 64 (for others)
+ * Default: 64
  */
 #ifndef PJMEDIA_VID_DEV_INFO_FMT_CNT
-#   if defined(PJ_ANDROID) && PJ_ANDROID != 0
-#       define PJMEDIA_VID_DEV_INFO_FMT_CNT 128
-#   else
-#       define PJMEDIA_VID_DEV_INFO_FMT_CNT 64
-#   endif
+#   define PJMEDIA_VID_DEV_INFO_FMT_CNT 64
 #endif
 
 

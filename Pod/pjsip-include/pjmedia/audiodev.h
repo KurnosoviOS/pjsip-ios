@@ -1,4 +1,4 @@
-/* $Id: audiodev.h 5430 2016-08-25 03:28:54Z ming $ */
+/* $Id: audiodev.h 5255 2016-03-10 05:02:07Z ming $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -181,11 +181,10 @@ typedef enum pjmedia_aud_dev_cap
     PJMEDIA_AUD_DEV_CAP_OUTPUT_SIGNAL_METER = 64,
 
     /** 
-     * Support for audio input routing/source. The value of this capability
-     * is an integer containing #pjmedia_aud_dev_route enumeration.
+     * Support for audio input routing. The value of this capability is an 
+     * integer containing #pjmedia_aud_dev_route enumeration.
      */
     PJMEDIA_AUD_DEV_CAP_INPUT_ROUTE = 128,
-    PJMEDIA_AUD_DEV_CAP_INPUT_SOURCE = 128,
 
     /** 
      * Support for audio output routing (e.g. loudspeaker vs earpiece). The
@@ -237,15 +236,14 @@ typedef enum pjmedia_aud_dev_cap
 
 
 /**
- * This enumeration describes audio routing/source setting.
+ * This enumeration describes audio routing setting.
  */
 typedef enum pjmedia_aud_dev_route
 {
     /**
-     * Default route/source, it is the default audio route/source of
-     * the audio framework backend, as in opening audio device without
-     * specifying any route/source setting or with specifying neutral
-     * route/source setting.
+     * Default route, it is the default audio route of the audio framework
+     * backend, as in opening audio device without specifying any route
+     * setting or with specifying neutral route setting.
      */
     PJMEDIA_AUD_DEV_ROUTE_DEFAULT = 0,
 
@@ -256,22 +254,7 @@ typedef enum pjmedia_aud_dev_route
     PJMEDIA_AUD_DEV_ROUTE_EARPIECE = 2,
 
     /** Route to paired Bluetooth device */
-    PJMEDIA_AUD_DEV_ROUTE_BLUETOOTH = 4,
-
-    /** 
-     * Custom audio route/source, specific to each audio device
-     * backend.
-     *
-     * For Android JNI audio device, the default is
-     * VOICE_COMMUNICATION (7). To change it to another value, set
-     * the input source capability of pjmedia_aud_param accordingly.
-     * For example:
-     *   // 6 is VOICE_RECOGNITION
-     *   unsigned aud_source = PJMEDIA_AUD_DEV_ROUTE_CUSTOM | 6;
-     *   pjmedia_aud_param_set_cap(&param, PJMEDIA_AUD_DEV_CAP_INPUT_SOURCE,
-     *				   &aud_source);
-     */
-    PJMEDIA_AUD_DEV_ROUTE_CUSTOM = 128
+    PJMEDIA_AUD_DEV_ROUTE_BLUETOOTH = 4
 
 } pjmedia_aud_dev_route;
 
@@ -316,9 +299,9 @@ typedef struct pjmedia_aud_dev_info
     unsigned caps;
 
     /** 
-     * Supported audio device routes/sources, as bitmask combination of 
+     * Supported audio device routes, as bitmask combination of 
      * #pjmedia_aud_dev_route. The value may be zero if the device
-     * does not support changing audio routes/sources.
+     * does not support audio routing.
      */
     unsigned routes;
 
@@ -452,9 +435,8 @@ typedef struct pjmedia_aud_param
     unsigned output_vol;
 
     /** 
-     * Set the audio input route/source. This setting is optional, and
-     * will only be used if PJMEDIA_AUD_DEV_CAP_INPUT_ROUTE/
-     * PJMEDIA_AUD_DEV_CAP_INPUT_SOURCE is set in the flags.
+     * Set the audio input route. This setting is optional, and will only be
+     * used if PJMEDIA_AUD_DEV_CAP_INPUT_ROUTE is set in the flags.
      */
     pjmedia_aud_dev_route input_route;
 

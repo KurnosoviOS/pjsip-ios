@@ -17,7 +17,7 @@ OPTIMIZE_FLAG="-O2" # https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
 # DEBUG_FLAGS="-g" # for debug symbols
 
-PJSIP_URL="http://www.pjsip.org/release/2.6/pjproject-2.6.tar.bz2"
+PJSIP_URL="http://www.pjsip.org/release/2.5.5/pjproject-2.5.5.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
 # OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/master/build-libssl.sh"
 OPENSSL_URL="https://raw.githubusercontent.com/x2on/OpenSSL-for-iPhone/da61c4b088f93944d51a1b90af965922f30a07d2/build-libssl.sh" #version locked couse OpenSSL-for-iPhone moved scripts to another folder. Suppose to add them to download. scripts/ 
