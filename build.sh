@@ -215,7 +215,7 @@ fi
 if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
     pushd . > /dev/null
     cd ${OPENSSL_DIR}
-    /bin/sh ${OPENSSL_SH} --archs="x86_64 arm64 armv7s armv7" # lock targets      # --version="1.0.2k" 
+    /bin/sh ${OPENSSL_SH} --archs="x86_64 arm64 armv7s armv7" --version="1.0.2k"  # lock targets      
     mkdir "${OPENSSL_DIR}/include/openssl"
     mv ${OPENSSL_DIR}/include/*.h ${OPENSSL_DIR}/include/openssl
     popd > /dev/null
