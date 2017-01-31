@@ -1,4 +1,4 @@
-/* $Id: config.h 5445 2016-10-05 09:52:39Z riza $ */
+/* $Id: config.h 5550 2017-01-26 02:29:59Z nanang $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -72,6 +72,31 @@
 #   undef PJ_WIN32_WINCE
 #   define PJ_WIN32_WINCE   1
 #   include <pj/compat/os_win32_wince.h>
+
+    /* Also define Win32 */
+#   define PJ_WIN32 1
+
+#elif defined(PJ_WIN32_WINPHONE8) || defined(_WIN32_WINPHONE8)
+    /*
+     * Windows Phone 8
+     */
+#   undef PJ_WIN32_WINPHONE8
+#   define PJ_WIN32_WINPHONE8   1
+#   include <pj/compat/os_winphone8.h>
+
+    /* Also define Win32 */
+#   define PJ_WIN32 1
+
+#elif defined(PJ_WIN32_UWP) || defined(_WIN32_UWP)
+    /*
+     * Windows UWP
+     */
+#   undef PJ_WIN32_UWP
+#   define PJ_WIN32_UWP   1
+#   include <pj/compat/os_winuwp.h>
+
+    /* Define Windows phone */
+#   define PJ_WIN32_WINPHONE8 1
 
     /* Also define Win32 */
 #   define PJ_WIN32 1
@@ -236,18 +261,23 @@
 #   define PJ_IS_LITTLE_ENDIAN	0
 #   define PJ_IS_BIG_ENDIAN	1
 
-#elif defined (PJ_M_ARMV4) || defined(ARM) || defined(_ARM_) ||  \
-	defined(ARMV4) || defined(__arm__)
+#elif defined(ARM) || defined(_ARM_) ||  defined(__arm__) || defined(_M_ARM)
+#   define PJ_HAS_PENTIUM	0
     /*
      * ARM, bi-endian, so raise error if endianness is not configured
      */
-#   undef PJ_M_ARMV4
-#   define PJ_M_ARMV4		1
-#   define PJ_M_NAME		"armv4"
-#   define PJ_HAS_PENTIUM	0
 #   if !PJ_IS_LITTLE_ENDIAN && !PJ_IS_BIG_ENDIAN
 #   	error Endianness must be declared for this processor
 #   endif
+#   if defined (PJ_M_ARMV7) || defined(ARMV7)
+#	undef PJ_M_ARMV7
+#	define PJ_M_ARM7		1
+#	define PJ_M_NAME		"armv7"
+#   elif defined (PJ_M_ARMV4) || defined(ARMV4)
+#	undef PJ_M_ARMV4
+#	define PJ_M_ARMV4		1
+#	define PJ_M_NAME		"armv4"
+#   endif 
 
 #elif defined (PJ_M_POWERPC) || defined(__powerpc) || defined(__powerpc__) || \
 	defined(__POWERPC__) || defined(__ppc__) || defined(_M_PPC) || \
@@ -891,6 +921,16 @@
 
 
 /**
+ * Define the maximum number of curves supported by the secure socket.
+ *
+ * Default: 32
+ */
+#ifndef PJ_SSL_SOCK_MAX_CURVES
+#  define PJ_SSL_SOCK_MAX_CURVES   32
+#endif
+
+
+/**
  * Disable WSAECONNRESET error for UDP sockets on Win32 platforms. See
  * https://trac.pjsip.org/repos/ticket/1197.
  *
@@ -1220,16 +1260,16 @@ PJ_BEGIN_DECL
 #define PJ_VERSION_NUM_MAJOR	2
 
 /** PJLIB version minor number. */
-#define PJ_VERSION_NUM_MINOR	5
+#define PJ_VERSION_NUM_MINOR	6
 
 /** PJLIB version revision number. */
-#define PJ_VERSION_NUM_REV	5
+#define PJ_VERSION_NUM_REV	0
 
 /**
  * Extra suffix for the version (e.g. "-trunk"), or empty for
  * web release version.
  */
-#define PJ_VERSION_NUM_EXTRA	"-svn"
+#define PJ_VERSION_NUM_EXTRA	""
 
 /**
  * PJLIB version number consists of three bytes with the following format:
