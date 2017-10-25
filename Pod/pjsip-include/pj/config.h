@@ -1,4 +1,4 @@
-/* $Id: config.h 5554 2017-02-20 00:57:15Z ming $ */
+/* $Id: config.h 5661 2017-09-25 04:20:21Z ming $ */
 /* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
@@ -909,6 +909,9 @@
 #   if defined(PJ_WIN32_WINCE) && PJ_WIN32_WINCE && _WIN32_WCE >= 0x502
 	/* Windows Mobile 6 or later */
 #	define PJ_QOS_IMPLEMENTATION    PJ_QOS_WM
+#   elif defined(PJ_DARWINOS)
+	/* Darwin OS (e.g: iOS, MacOS, tvOS) */
+#	define PJ_QOS_IMPLEMENTATION    PJ_QOS_DARWIN
 #   endif
 #endif
 
@@ -1287,7 +1290,7 @@ PJ_BEGIN_DECL
 #define PJ_VERSION_NUM_MAJOR	2
 
 /** PJLIB version minor number. */
-#define PJ_VERSION_NUM_MINOR	6
+#define PJ_VERSION_NUM_MINOR	7
 
 /** PJLIB version revision number. */
 #define PJ_VERSION_NUM_REV	0
@@ -1296,7 +1299,7 @@ PJ_BEGIN_DECL
  * Extra suffix for the version (e.g. "-trunk"), or empty for
  * web release version.
  */
-#define PJ_VERSION_NUM_EXTRA	"-svn"
+#define PJ_VERSION_NUM_EXTRA	""
 
 /**
  * PJLIB version number consists of three bytes with the following format:
