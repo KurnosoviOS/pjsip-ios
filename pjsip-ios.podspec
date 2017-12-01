@@ -22,7 +22,6 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '6.0'
   s.requires_arc = false
-  s.dependency 'OpenSSL-Universal', '1.0.1.k'
 
   s.public_header_files = 'Pod/pjsip-include/**'
   
