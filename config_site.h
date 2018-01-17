@@ -32,6 +32,9 @@
 /* Fine tune Speex's default settings for best performance/quality */
 #define PJMEDIA_CODEC_SPEEX_DEFAULT_QUALITY	5
 
+/* Video */
+#define PJMEDIA_HAS_VIDEO			1
+
 /*
  * PJSIP settings.
  */

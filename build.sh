@@ -14,10 +14,10 @@ fi
 OPTIMIZE_FLAG="-O2" # https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 # OPTIMIZE_FLAG="-O0" # 0 for debug
 
-DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html	
 # DEBUG_FLAGS="-g" # for debug symbols
 
-PJSIP_URL="http://www.pjsip.org/release/2.5.5/pjproject-2.5.5.tar.bz2"
+PJSIP_URL="http://www.pjsip.org/release/2.7.1/pjproject-2.7.1.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
 
 
@@ -92,6 +92,8 @@ copy_libs () {
     cp third_party/lib/libresample-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libresample-${DST}-apple-darwin_ios.a
     cp third_party/lib/libspeex-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libspeex-${DST}-apple-darwin_ios.a
     cp third_party/lib/libsrtp-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libsrtp-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libyuv-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libyuv-${DST}-apple-darwin_ios.a
+    cp third_party/lib/libwebrtc-${DST}-apple-darwin_ios.a third_party/lib-${DST}/libwebrtc-${DST}-apple-darwin_ios.a
 }
 
 lipo_libs () {
@@ -227,6 +229,20 @@ xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libsrtp-i386-apple-da
                          -arch armv7s third_party/lib-armv7s/libsrtp-armv7s-apple-darwin_ios.a \
                          -arch arm64 third_party/lib-arm64/libsrtp-arm64-apple-darwin_ios.a \
                          -create -output lib/libsrtp-arm-apple-darwin_ios.a
+
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libyuv-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libyuv-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libyuv-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libyuv-armv7s-apple-darwin_ios.a \
+                         -arch arm64 third_party/lib-arm64/libyuv-arm64-apple-darwin_ios.a \
+                         -create -output lib/libyuv-arm-apple-darwin_ios.a
+
+xcrun -sdk iphoneos lipo -arch i386   third_party/lib-i386/libwebrtc-i386-apple-darwin_ios.a \
+                         -arch x86_64 third_party/lib-x86_64/libwebrtc-x86_64-apple-darwin_ios.a \
+                         -arch armv7  third_party/lib-armv7/libwebrtc-armv7-apple-darwin_ios.a \
+                         -arch armv7s third_party/lib-armv7s/libwebrtc-armv7s-apple-darwin_ios.a \
+                         -arch arm64 third_party/lib-arm64/libwebrtc-arm64-apple-darwin_ios.a \
+                         -create -output lib/libwebrtc-arm-apple-darwin_ios.a
 }
 
 if [ ! -f ${OPENSSL_SH} ]; then
@@ -276,7 +292,8 @@ export LDFLAGS="-L${OPENSSL_DIR}/lib ${OPTIMIZE_FLAG} ${DEBUG_FLAG}"
 
 echo ${OPENSSL_DIR}
 
-configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-libwebrtc --disable-ffmpeg"
+#configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-ffmpeg"
+configure="./configure-iphone --with-ssl=${OPENSSL_DIR}"
 
 
 
@@ -289,7 +306,8 @@ function _build() {
   echo "Building for ${ARCH}..."
 
   make distclean > ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-libwebrtc --disable-ffmpeg >> ${LOG} 2>&1
+  # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-ffmpeg >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
