@@ -8,8 +8,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "pjsip-ios"
-  s.version          = "0.1.3"
+  s.name             = "pjsip-ios-video"
+  s.version          = "0.1.4"
   s.summary          = "PJSIP for ios"
   s.description      = <<-DESC
                        Other pods for pjsip were just not in a stable state. So I am creating a new one.

@@ -292,8 +292,8 @@ export LDFLAGS="-L${OPENSSL_DIR}/lib ${OPTIMIZE_FLAG} ${DEBUG_FLAG}"
 
 echo ${OPENSSL_DIR}
 
-configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg"
-#configure="./configure-iphone --with-ssl=${OPENSSL_DIR}"
+#configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg"
+configure="./configure-iphone --with-ssl=${OPENSSL_DIR}"
 
 
 
@@ -306,8 +306,8 @@ function _build() {
   echo "Building for ${ARCH}..."
 
   make distclean > ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
-  # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
+  # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
