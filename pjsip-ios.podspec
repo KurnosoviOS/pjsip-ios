@@ -35,6 +35,6 @@ Pod::Spec.new do |s|
 
   s.xcconfig = {
     'GCC_PREPROCESSOR_DEFINITIONS' => 'PJ_AUTOCONF=1',
-    'HEADER_SEARCH_PATHS'  => '$(inherited) $(PODS_ROOT)/pjsip-ios/Pod/pjsip-include'
+    'HEADER_SEARCH_PATHS'  => '$(inherited) $(PODS_ROOT)/pjsip-ios-video/Pod/pjsip-include'
   }
 end
