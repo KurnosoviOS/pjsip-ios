@@ -1,0 +1,121 @@
+CXX	codec/common/src/common_tables.o
+CXX	codec/common/src/copy_mb.o
+CXX	codec/common/src/cpu.o
+CXX	codec/common/src/crt_util_safe_x.o
+CXX	codec/common/src/deblocking_common.o
+CXX	codec/common/src/expand_pic.o
+CXX	codec/common/src/intra_pred_common.o
+CXX	codec/common/src/mc.o
+CXX	codec/common/src/memory_align.o
+CXX	codec/common/src/sad_common.o
+CXX	codec/common/src/utils.o
+CXX	codec/common/src/welsCodecTrace.o
+CXX	codec/common/src/WelsTaskThread.o
+CXX	codec/common/src/WelsThread.o
+CXX	codec/common/src/WelsThreadLib.o
+CXX	codec/common/src/WelsThreadPool.o
+CCAS	codec/common/arm/copy_mb_neon.o
+CCAS	codec/common/arm/deblocking_neon.o
+CCAS	codec/common/arm/expand_picture_neon.o
+CCAS	codec/common/arm/intra_pred_common_neon.o
+CCAS	codec/common/arm/mc_neon.o
+AR	libcommon.a
+CXX	codec/decoder/core/src/au_parser.o
+CXX	codec/decoder/core/src/bit_stream.o
+CXX	codec/decoder/core/src/cabac_decoder.o
+CXX	codec/decoder/core/src/deblocking.o
+CXX	codec/decoder/core/src/decode_mb_aux.o
+CXX	codec/decoder/core/src/decode_slice.o
+CXX	codec/decoder/core/src/decoder.o
+CXX	codec/decoder/core/src/decoder_core.o
+CXX	codec/decoder/core/src/decoder_data_tables.o
+CXX	codec/decoder/core/src/error_concealment.o
+CXX	codec/decoder/core/src/fmo.o
+CXX	codec/decoder/core/src/get_intra_predictor.o
+CXX	codec/decoder/core/src/manage_dec_ref.o
+CXX	codec/decoder/core/src/memmgr_nal_unit.o
+CXX	codec/decoder/core/src/mv_pred.o
+CXX	codec/decoder/core/src/parse_mb_syn_cabac.o
+CXX	codec/decoder/core/src/parse_mb_syn_cavlc.o
+CXX	codec/decoder/core/src/pic_queue.o
+CXX	codec/decoder/core/src/rec_mb.o
+Keeping existing codec/common/inc/version_gen.h
+CXX	codec/decoder/plus/src/welsDecoderExt.o
+CCAS	codec/decoder/core/arm/block_add_neon.o
+CCAS	codec/decoder/core/arm/intra_pred_neon.o
+AR	libdecoder.a
+CXX	codec/encoder/core/src/au_set.o
+CXX	codec/encoder/core/src/deblocking.o
+CXX	codec/encoder/core/src/decode_mb_aux.o
+CXX	codec/encoder/core/src/encode_mb_aux.o
+CXX	codec/encoder/core/src/encoder.o
+CXX	codec/encoder/core/src/encoder_data_tables.o
+CXX	codec/encoder/core/src/encoder_ext.o
+CXX	codec/encoder/core/src/get_intra_predictor.o
+CXX	codec/encoder/core/src/md.o
+CXX	codec/encoder/core/src/mv_pred.o
+CXX	codec/encoder/core/src/nal_encap.o
+CXX	codec/encoder/core/src/paraset_strategy.o
+CXX	codec/encoder/core/src/picture_handle.o
+CXX	codec/encoder/core/src/ratectl.o
+CXX	codec/encoder/core/src/ref_list_mgr_svc.o
+CXX	codec/encoder/core/src/sample.o
+CXX	codec/encoder/core/src/set_mb_syn_cabac.o
+CXX	codec/encoder/core/src/set_mb_syn_cavlc.o
+CXX	codec/encoder/core/src/slice_multi_threading.o
+CXX	codec/encoder/core/src/svc_base_layer_md.o
+CXX	codec/encoder/core/src/svc_enc_slice_segment.o
+CXX	codec/encoder/core/src/svc_encode_mb.o
+CXX	codec/encoder/core/src/svc_encode_slice.o
+CXX	codec/encoder/core/src/svc_mode_decision.o
+CXX	codec/encoder/core/src/svc_motion_estimate.o
+CXX	codec/encoder/core/src/svc_set_mb_syn_cabac.o
+CXX	codec/encoder/core/src/svc_set_mb_syn_cavlc.o
+CXX	codec/encoder/core/src/wels_preprocess.o
+CXX	codec/encoder/core/src/wels_task_base.o
+CXX	codec/encoder/core/src/wels_task_encoder.o
+CXX	codec/encoder/core/src/wels_task_management.o
+CXX	codec/encoder/plus/src/welsEncoderExt.o
+CCAS	codec/encoder/core/arm/intra_pred_neon.o
+CCAS	codec/encoder/core/arm/intra_pred_sad_3_opt_neon.o
+CCAS	codec/encoder/core/arm/memory_neon.o
+CCAS	codec/encoder/core/arm/pixel_neon.o
+CCAS	codec/encoder/core/arm/reconstruct_neon.o
+CCAS	codec/encoder/core/arm/svc_motion_estimation.o
+AR	libencoder.a
+CXX	codec/processing/src/adaptivequantization/AdaptiveQuantization.o
+CXX	codec/processing/src/backgrounddetection/BackgroundDetection.o
+CXX	codec/processing/src/common/memory.o
+CXX	codec/processing/src/common/WelsFrameWork.o
+CXX	codec/processing/src/common/WelsFrameWorkEx.o
+CXX	codec/processing/src/complexityanalysis/ComplexityAnalysis.o
+CXX	codec/processing/src/denoise/denoise.o
+CXX	codec/processing/src/denoise/denoise_filter.o
+CXX	codec/processing/src/downsample/downsample.o
+CXX	codec/processing/src/downsample/downsamplefuncs.o
+CXX	codec/processing/src/imagerotate/imagerotate.o
+CXX	codec/processing/src/imagerotate/imagerotatefuncs.o
+CXX	codec/processing/src/scenechangedetection/SceneChangeDetection.o
+CXX	codec/processing/src/scrolldetection/ScrollDetection.o
+CXX	codec/processing/src/scrolldetection/ScrollDetectionFuncs.o
+CXX	codec/processing/src/vaacalc/vaacalcfuncs.o
+CXX	codec/processing/src/vaacalc/vaacalculation.o
+CCAS	codec/processing/src/arm/adaptive_quantization.o
+CCAS	codec/processing/src/arm/down_sample_neon.o
+CCAS	codec/processing/src/arm/pixel_sad_neon.o
+CCAS	codec/processing/src/arm/vaa_calc_neon.o
+AR	libprocessing.a
+AR	libopenh264.a
+Keeping existing codec/common/inc/version_gen.h
+mkdir -p /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/include/wels
+install -m 644 .//codec/api/svc/codec*.h /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/include/wels
+mkdir -p /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib
+install -m 644 libopenh264.a /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib
+CXX	libopenh264.3.dylib
+mkdir -p /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib
+install -m 755 libopenh264.3.dylib /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib
+if [ "3.dylib" != "dylib" ]; then \
+		cp -a libopenh264.dylib /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib; \
+	fi
+mkdir -p /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib/pkgconfig
+install -m 644 openh264.pc /Users/eastwind/Documents/GitHub/pjsip-chebur/build/openh264/build/armv7s/lib/pkgconfig
