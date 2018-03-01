@@ -8,7 +8,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "pjsip-ios"
+  s.name             = "pjsip-ios-video"
   s.version          = "0.2.0"
   s.summary          = "PJSIP for ios"
   s.description      = <<-DESC
