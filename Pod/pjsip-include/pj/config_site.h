@@ -63,3 +63,16 @@
 #define PJSUA_MAX_RECORDERS			4
 #define PJSUA_MAX_CONF_PORTS		(PJSUA_MAX_CALLS+2*PJSUA_MAX_PLAYERS)
 #define PJSUA_MAX_BUDDIES			32
+
+// Для поддержки FEC необходимо уменьшить размер PJMEDIA_MAX_VID_PAYLOAD_SIZE на размеры RTP Extension header (4 октета) и FEC header (12 октетов)
+// Размер заголовка FEC опеределяется размером структуры fec_ext_hdr в transport_adapter_fec.c или иной реализацией FEC
+// По умолчанию PJMEDIA_MAX_VID_PAYLOAD_SIZE определяется в config.h pjmedia
+#define PJMEDIA_HAS_SRTP 1
+
+#ifndef PJMEDIA_MAX_VID_PAYLOAD_SIZE
+#  if PJMEDIA_HAS_SRTP
+#     define PJMEDIA_MAX_VID_PAYLOAD_SIZE     (PJMEDIA_MAX_MTU - 20 - (128+16) - (4+12))
+#  else
+#     define PJMEDIA_MAX_VID_PAYLOAD_SIZE     (PJMEDIA_MAX_MTU - 20 - (4+12))
+#  endif
+#endif
