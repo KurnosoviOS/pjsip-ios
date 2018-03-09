@@ -237,13 +237,13 @@ echo "Using ${PJSIP_NAME}..."
 
 if [ -d ${PJSIP_DIR} ]; then
     echo "Cleaning up..."
-    rm -rf ${PJSIP_DIR}
+#rm -rf ${PJSIP_DIR}
 fi
 
 echo "Unarchiving..."
 pushd . > /dev/null
 cd ${BUILD_DIR}
-tar -xf ${PJSIP_ARCHIVE}
+#tar -xf ${PJSIP_ARCHIVE}
 popd > /dev/null
 
 echo "Creating config.h..."
