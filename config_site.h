@@ -9,6 +9,8 @@
  */
 #define PJ_HAS_FLOATING_POINT		1
 
+#define PJ_HAS_IPV6 1
+
 /*
  * PJMEDIA settings
  */
