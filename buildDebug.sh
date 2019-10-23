@@ -14,8 +14,8 @@ fi
 OPTIMIZE_FLAG="-O2" # https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 # OPTIMIZE_FLAG="-O0" # 0 for debug
 
-DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
-#DEBUG_FLAGS="-g -DDEBUG -O0 -glldb" # for debug symbols
+#DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
+DEBUG_FLAGS="-g -DDEBUG -O0 -glldb" # for debug symbols
 
 PJSIP_URL="http://www.pjsip.org/release/2.7.1/pjproject-2.7.1.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
@@ -220,7 +220,7 @@ fi
 if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
     pushd . > /dev/null
     cd ${OPENSSL_DIR}
-    /bin/sh ${OPENSSL_SH} --archs="x86_64 i386 arm64 armv7s armv7" # lock targets      # --version="1.0.2k"
+    /bin/sh ${OPENSSL_SH} --archs="x86_64 i386 arm64 armv7s armv7" # lock targets      # --version="1.0.2k" 
     mkdir "${OPENSSL_DIR}/include/openssl"
     mv ${OPENSSL_DIR}/include/*.h ${OPENSSL_DIR}/include/openssl
     popd > /dev/null
