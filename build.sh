@@ -232,6 +232,7 @@ if [ ! -f ${PJSIP_ARCHIVE} ]; then
 fi
 
 PJSIP_NAME=`tar tzf ${PJSIP_ARCHIVE} | sed -e 's@/.*@@' | uniq`
+PJSIP_NAME="pjproject-2.7.1"
 PJSIP_DIR=${BUILD_DIR}/${PJSIP_NAME}
 echo "Using ${PJSIP_NAME}..."
 
@@ -258,21 +259,24 @@ export LDFLAGS="-L${OPENSSL_DIR}/lib ${OPTIMIZE_FLAG} ${DEBUG_FLAG}"
 echo ${OPENSSL_DIR}
 
 #configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg"
-configure="./configure-iphone --with-ssl=${OPENSSL_DIR}"
+configure="./configure-macos --with-ssl=${OPENSSL_DIR}"
 
 
 
 cd ${PJSIP_DIR}
+echo "PJSIP_DIR"
+echo ${PJSIP_DIR}
 
 function _build() {
   ARCH=$1
   LOG=${BUILD_DIR}/${ARCH}.log
 
   echo "Building for ${ARCH}..."
+  pwd
 
   make distclean > ${LOG} 2>&1
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --with-openh264=${OPENH264_DIR}/${ARCH} >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} --with-openh264=${OPENH264_DIR}/${ARCH} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
@@ -296,11 +300,20 @@ function x86_64() {
   _build "x86_64"
 }
 
-armv7 && armv7s && arm64
+function macos_64() {
+  export DEVPATH="`xcrun -sdk macosx --show-sdk-platform-path`/Developer"
+  _build "x86_64"
+}
 
-echo "Making universal lib..."
+#test
+#armv7 && armv7s && arm64
+macos_64
+
+#test
+#echo "Making universal lib..."
 make distclean > /dev/null
-lipo_libs
+#test
+#lipo_libs
 
 cp -R ${OPENH264_DIR}/arm64/include/wels/* ../../Pod/$FOLDER_PJSIP/openh264/wels
 cp -R pjlib/include/* ../../Pod/$FOLDER_PJSIP/
