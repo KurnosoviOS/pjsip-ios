@@ -243,6 +243,7 @@ fi
 
 echo "Unarchiving..."
 pushd . > /dev/null
+echo "cd BUILD_DIR: ${BUILD_DIR}"
 cd ${BUILD_DIR}
 #tar -xf ${PJSIP_ARCHIVE}
 popd > /dev/null
@@ -264,8 +265,7 @@ configure="./configure-macos --with-ssl=${OPENSSL_DIR}"
 
 
 cd ${PJSIP_DIR}
-echo "PJSIP_DIR"
-echo ${PJSIP_DIR}
+echo "cd PJSIP_DIR: ${PJSIP_DIR}"
 
 function _build() {
   ARCH=$1

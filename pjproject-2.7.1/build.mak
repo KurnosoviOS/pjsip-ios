@@ -1,4 +1,4 @@
-export PJDIR := /Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1
+export PJDIR := /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1
 include $(PJDIR)/version.mak
 export PJ_DIR := $(PJDIR)
 
@@ -7,8 +7,8 @@ export MACHINE_NAME := auto
 export OS_NAME := auto
 export HOST_NAME := unix
 export CC_NAME := gcc
-export TARGET_NAME := arm64-apple-darwin_ios
-export CROSS_COMPILE := arm64-apple-darwin_ios-
+export TARGET_NAME := x86_64-apple-darwin
+export CROSS_COMPILE := x86_64-apple-darwin-
 export LINUX_POLL := select 
 export SHLIB_SUFFIX := dylib
 
@@ -106,7 +106,7 @@ APP_THIRD_PARTY_LIB_FILES += $(PJ_DIR)/third_party/lib/libg7221codec.$(SHLIB_SUF
 endif
 endif
 
-ifneq ($(findstring pa,),)
+ifneq ($(findstring pa,coreaudio),)
 ifeq (0,1)
 # External PA
 APP_THIRD_PARTY_EXT += -lportaudio
@@ -171,8 +171,8 @@ V4L2_CFLAGS =
 V4L2_LDFLAGS = 
 
 # OPENH264 flags
-OPENH264_CFLAGS = -DPJMEDIA_HAS_OPENH264_CODEC=1 -I/Users/eastwind/Documents/pjsip-ios/openh264/arm64/include 
-OPENH264_LDFLAGS =  -L/Users/eastwind/Documents/pjsip-ios/openh264/arm64/lib -lopenh264 -lstdc++
+OPENH264_CFLAGS =  
+OPENH264_LDFLAGS =  
 
 # QT
 AC_PJMEDIA_VIDEO_HAS_QT = 
@@ -181,8 +181,8 @@ AC_PJMEDIA_VIDEO_HAS_QT =
 # Darwin (Mac and iOS)
 AC_PJMEDIA_VIDEO_HAS_DARWIN = yes
 AC_PJMEDIA_VIDEO_HAS_VTOOLBOX = yes
-AC_PJMEDIA_VIDEO_HAS_IOS_OPENGL = yes
-DARWIN_CFLAGS = -DPJMEDIA_VIDEO_DEV_HAS_DARWIN=1 -DPJMEDIA_VIDEO_DEV_HAS_IOS_OPENGL=1
+AC_PJMEDIA_VIDEO_HAS_IOS_OPENGL = no
+DARWIN_CFLAGS = -DPJMEDIA_VIDEO_DEV_HAS_DARWIN=1
 
 # Android
 ANDROID_CFLAGS = 
@@ -194,10 +194,10 @@ PJ_VIDEO_LDFLAGS += $(SDL_LDFLAGS) $(FFMPEG_LDFLAGS) $(V4L2_LDFLAGS) \
                    $(OPENH264_LDFLAGS)
 
 # CFLAGS, LDFLAGS, and LIBS to be used by applications
-export APP_CC := /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
-export APP_CXX := /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+export APP_CC := /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+export APP_CXX := /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 export APP_CFLAGS := -DPJ_AUTOCONF=1\
-	-I/Users/eastwind/Documents/pjsip-ios/openh264/arm64/include -I/Users/eastwind/Documents/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=7.0 -DPJ_SDK_NAME="\"iPhoneOS11.2.sdk\"" -arch arm64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwind/Documents/pjsip-ios/build/openssl/include\
+	-O2 -Wno-unused-label -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1\
 	$(PJ_VIDEO_CFLAGS) \
 	-I$(PJDIR)/pjlib/include\
 	-I$(PJDIR)/pjlib-util/include\
@@ -212,7 +212,7 @@ export APP_LDFLAGS := -L$(PJDIR)/pjlib/lib\
 	-L$(PJDIR)/pjsip/lib\
 	-L$(PJDIR)/third_party/lib\
 	$(PJ_VIDEO_LDFLAGS) \
-	-L/Users/eastwind/Documents/pjsip-ios/openh264/arm64/lib -L/Users/eastwind/Documents/pjsip-ios/build/openssl/lib -O2  -miphoneos-version-min=7.0 -arch arm64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk -framework AudioToolbox -framework Foundation -L/Users/eastwind/Documents/pjsip-ios/build/openssl/lib
+	-O2 -mmacosx-version-min=10.15 -arch x86_64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation
 export APP_LDXXFLAGS := $(APP_LDFLAGS)
 
 export APP_LIB_FILES := \
@@ -291,7 +291,7 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) \
 	$(APP_THIRD_PARTY_LIBS)\
 	$(APP_THIRD_PARTY_EXT)\
 	$(PJLIB_LDLIB) \
-	-lssl -lcrypto -lopenh264 -lstdc++ -lm -lpthread  -framework CoreAudio -framework CoreFoundation -framework AudioToolbox -framework CFNetwork -framework UIKit -framework UIKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox -framework OpenGLES
+	-lm -lpthread  -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -framework Foundation -framework AppKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox
 export APP_LDXXLIBS := $(PJSUA2_LIB_LDLIB) \
 	-lstdc++ \
 	$(APP_LDLIBS)
@@ -314,6 +314,6 @@ export PJ_LIBXX_FILES := $(APP_LIBXX_FILES)
 export PJ_INSTALL_DIR := /usr/local
 export PJ_INSTALL_INC_DIR := ${prefix}/include
 export PJ_INSTALL_LIB_DIR := ${exec_prefix}/lib
-export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1 -I/Users/eastwind/Documents/pjsip-ios/openh264/arm64/include -I/Users/eastwind/Documents/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=7.0 -DPJ_SDK_NAME="\"iPhoneOS11.2.sdk\"" -arch arm64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.2.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwind/Documents/pjsip-ios/build/openssl/include
+export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1 -O2 -Wno-unused-label -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -isysroot /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1
 export PJ_INSTALL_CXXFLAGS := -g -O2 $(PJ_INSTALL_CFLAGS)
 export PJ_INSTALL_LDFLAGS := -L$(PJ_INSTALL_LIB_DIR) $(APP_LDLIBS)
