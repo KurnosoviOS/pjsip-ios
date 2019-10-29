@@ -32,7 +32,7 @@ fi
 if test "x${DEVPATH}" = "x"; then
   DEVPATH=/Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer
   if test  ! -d $DEVPATH; then
-    DEVPATH=/Developer/Platforms/MacOSX.platform/Developer
+    DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
   fi
   echo "$F: DEVPATH is not specified, using ${DEVPATH}"
 fi
@@ -58,6 +58,8 @@ else
   # .. else assume the SDK name is used.
   SDKPATH=${DEVPATH}/SDKs/${IPHONESDK}
 fi
+
+echo "-----SDK: ${SDKPATH}"
 
 # Test the SDK directory
 if test ! -d ${SDKPATH}/usr/include; then

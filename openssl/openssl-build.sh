@@ -21,7 +21,7 @@ if [ $1 -e "-h" ]; then
 fi
 
 if [ -z $1 ]; then
-	SDK_VERSION="8.2"
+	SDK_VERSION="10.15"
 else
 	SDK_VERSION=$1
 fi
@@ -64,6 +64,11 @@ buildIOS()
 	if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]]; then
 		PLATFORM="iPhoneSimulator"
 	else
+		if [[ "${ARCH}" == "macos64" ]]; then
+			ARCH="x86_64"
+			PLATFORM="MacOSX"
+		fi
+
 		PLATFORM="iPhoneOS"
 		sed -ie "s!static volatile sig_atomic_t intr_signal;!static volatile intr_signal;!" "crypto/ui/ui_openssl.c"
 	fi
@@ -76,7 +81,7 @@ buildIOS()
 
 	echo "Building ${OPENSSL_VERSION} for ${PLATFORM} ${SDK_VERSION} ${ARCH}"
 
-	if [[ "${ARCH}" == "x86_64" ]]; then
+	if [[ "${ARCH}" == "x86_64" && "${PLATFORM}" == "iPhoneSimulator" ]]; then
 		./Configure darwin64-x86_64-cc --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 	else
 		./Configure iphoneos-cross --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
@@ -113,7 +118,7 @@ tar xfz "${OPENSSL_VERSION}.tar.gz"
 chmod -R o+rwx "${OPENSSL_VERSION}"
 
 #buildMac "i386"
-buildMac "x86_64"
+buildIOS "macos64"
 
 echo "Copying headers"
 cp /tmp/${OPENSSL_VERSION}-x86_64/include/openssl/* include/openssl/

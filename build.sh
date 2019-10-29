@@ -20,6 +20,12 @@ DEBUG_FLAGS="" # https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html
 PJSIP_URL="http://www.pjsip.org/release/2.7.1/pjproject-2.7.1.tar.bz2"
 PJSIP_ARCHIVE=${BUILD_DIR}/`basename ${PJSIP_URL}`
 
+#github fork and commit - for concrete scripts version
+LOOP_ARCHS_URL="https://raw.githubusercontent.com/marcelosalloum/OpenSSL-for-iPhone/3281c22e0e98571e5f4c0731d203edbae972d43f/scripts/build-loop-archs.sh"
+LOOP_TARGETS_URL="https://raw.githubusercontent.com/marcelosalloum/OpenSSL-for-iPhone/3281c22e0e98571e5f4c0731d203edbae972d43f//scripts/build-loop-targets.sh"
+
+OPENSSL_URL="https://raw.githubusercontent.com/marcelosalloum/OpenSSL-for-iPhone/3281c22e0e98571e5f4c0731d203edbae972d43f//build-libssl.sh"
+
 OPENSSL_DIR=${BUILD_DIR}/openssl
 OPENSSL_SH=${OPENSSL_DIR}/`basename ${OPENSSL_DIR}`
 
@@ -229,13 +235,19 @@ xcrun -sdk iphoneos lipo -arch armv7  ${OPENH264_DIR}/armv7/lib/libopenh264.a \
                          -create -output lib/libopenh264.a
 }
 
+if [ ! -f ${OPENSSL_SH} ]; then
+    echo "Downloading openssl..."
+    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_TARGETS_URL") ${LOOP_TARGETS_URL}
+    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_ARCHS_URL") ${LOOP_ARCHS_URL}
+    curl --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
+fi
+
 if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
     pushd . > /dev/null
-    mkdir ${OPENSSL_DIR}
     cd ${OPENSSL_DIR}
-    cp ../../openssl/openssl-build.sh openssl-build.sh
-    sh openssl-build.sh
+    /bin/sh ${OPENSSL_SH} --archs="MacOSX_x86_64" # lock targets      # --version="1.0.2k"
     mkdir "${OPENSSL_DIR}/include/openssl"
+    mv ${OPENSSL_DIR}/include/*.h ${OPENSSL_DIR}/include/openssl
     popd > /dev/null
 fi
 
@@ -315,12 +327,13 @@ function x86_64() {
 
 function macos_64() {
   export DEVPATH="`xcrun -sdk macosx --show-sdk-platform-path`/Developer"
+  #_build "x86_64 --target=x86_64-apple-ios13.0-macabi"
   _build "x86_64"
 }
 
 macos_64
 
-make distclean > /dev/null
+#make distclean > /dev/null
 
 copy_mac_libs "x86_64"
 

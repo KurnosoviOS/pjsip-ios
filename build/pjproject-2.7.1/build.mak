@@ -9,7 +9,7 @@ export HOST_NAME := unix
 export CC_NAME := gcc
 export TARGET_NAME := x86_64-apple-darwin
 export CROSS_COMPILE := x86_64-apple-darwin-
-export LINUX_POLL := select 
+export LINUX_POLL := select
 export SHLIB_SUFFIX := dylib
 
 export prefix := /usr/local
@@ -159,24 +159,24 @@ endif
 #       good!
 
 # SDL flags
-SDL_CFLAGS = 
-SDL_LDFLAGS = 
+SDL_CFLAGS =
+SDL_LDFLAGS =
 
 # FFMPEG flags
-FFMPEG_CFLAGS =  
-FFMPEG_LDFLAGS =  
+FFMPEG_CFLAGS =
+FFMPEG_LDFLAGS =
 
 # Video4Linux2
-V4L2_CFLAGS = 
-V4L2_LDFLAGS = 
+V4L2_CFLAGS =
+V4L2_LDFLAGS =
 
 # OPENH264 flags
-OPENH264_CFLAGS =  
-OPENH264_LDFLAGS =  
+OPENH264_CFLAGS =
+OPENH264_LDFLAGS =
 
 # QT
-AC_PJMEDIA_VIDEO_HAS_QT = 
-# QT_CFLAGS = 
+AC_PJMEDIA_VIDEO_HAS_QT =
+# QT_CFLAGS =
 
 # Darwin (Mac and iOS)
 AC_PJMEDIA_VIDEO_HAS_DARWIN = yes
@@ -185,7 +185,7 @@ AC_PJMEDIA_VIDEO_HAS_IOS_OPENGL = no
 DARWIN_CFLAGS = -DPJMEDIA_VIDEO_DEV_HAS_DARWIN=1
 
 # Android
-ANDROID_CFLAGS = 
+ANDROID_CFLAGS =
 
 # PJMEDIA features exclusion
 PJ_VIDEO_CFLAGS += $(SDL_CFLAGS) $(FFMPEG_CFLAGS) $(V4L2_CFLAGS) $(QT_CFLAGS) \
@@ -197,7 +197,7 @@ PJ_VIDEO_LDFLAGS += $(SDL_LDFLAGS) $(FFMPEG_LDFLAGS) $(V4L2_LDFLAGS) \
 export APP_CC := /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 export APP_CXX := /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 export APP_CFLAGS := -DPJ_AUTOCONF=1\
-	-I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include\
+	-I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/usr/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include\
 	$(PJ_VIDEO_CFLAGS) \
 	-I$(PJDIR)/pjlib/include\
 	-I$(PJDIR)/pjlib-util/include\
@@ -212,7 +212,7 @@ export APP_LDFLAGS := -L$(PJDIR)/pjlib/lib\
 	-L$(PJDIR)/pjsip/lib\
 	-L$(PJDIR)/third_party/lib\
 	$(PJ_VIDEO_LDFLAGS) \
-	-L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -mmacosx-version-min=10.15 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib
+	-L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -mmacosx-version-min=10.15 -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/usr/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -framework AudioToolbox -framework Foundation -framework UIKit -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib
 export APP_LDXXFLAGS := $(APP_LDFLAGS)
 
 export APP_LIB_FILES := \
@@ -314,6 +314,6 @@ export PJ_LIBXX_FILES := $(APP_LIBXX_FILES)
 export PJ_INSTALL_DIR := /usr/local
 export PJ_INSTALL_INC_DIR := ${prefix}/include
 export PJ_INSTALL_LIB_DIR := ${exec_prefix}/lib
-export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include
+export PJ_INSTALL_CFLAGS := -I$(PJ_INSTALL_INC_DIR) -DPJ_AUTOCONF=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -mmacosx-version-min=10.15 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/usr/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -DPJ_IS_BIG_ENDIAN=0 -DPJ_IS_LITTLE_ENDIAN=1 -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include
 export PJ_INSTALL_CXXFLAGS := -g -O2 $(PJ_INSTALL_CFLAGS)
 export PJ_INSTALL_LDFLAGS := -L$(PJ_INSTALL_LIB_DIR) $(APP_LDLIBS)

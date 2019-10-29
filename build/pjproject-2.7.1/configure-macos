@@ -32,7 +32,7 @@ fi
 if test "x${DEVPATH}" = "x"; then
   DEVPATH=/Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer
   if test  ! -d $DEVPATH; then
-    DEVPATH=/Developer/Platforms/MacOSX.platform/Developer
+    DEVPATH=/Developer/Platforms/iPhoneOS.platform/Developer
   fi
   echo "$F: DEVPATH is not specified, using ${DEVPATH}"
 fi
@@ -118,12 +118,15 @@ if test "${ARCH}" = ""; then
   export ARCH="-arch x86_64"
   echo "$F: ARCH is not specified, choosing ${ARCH}"
 fi
+ARCH="${ARCH} -target x86_64-apple-ios13.0-macabi"
+
 export ARCH_VAL=`echo ${ARCH} | sed 's/\-arch //' | sed -e 's/^[ \t]*//;s/[ \t]*$//' `
 
 if test "${MIN_IOS}" = ""; then
-  MIN_IOS_VER="10.15"
+  MIN_IOS_VER="13.0"
   echo "$F: MIN_IOS is not specified, choosing ${MIN_IOS_VER}"
-  MIN_IOS="-mmacosx-version-min=${MIN_IOS_VER}"
+  #MIN_IOS="-mmacosx-version-min=${MIN_IOS_VER}"
+  MIN_IOS="-miphoneos-version-min=13.0"
 fi
 CFLAGS="${CFLAGS} ${MIN_IOS}"
 LDFLAGS="${LDFLAGS} ${MIN_IOS}"
@@ -135,10 +138,18 @@ if test "${CXX}" = ""; then
   echo "$F: CXX is not specified, using ${CXX}"
 fi
 
+MACOSPATHS="-isysroot ${SDKPATH}"
+#MACOSPATHS="${MACOSPATHS} -isystem ${SDKPATH}/System/iOSSupport/usr/include"
+#MACOSPATHS="${MACOSPATHS} -iframework ${SDKPATH}/System/iOSSupport/System/Library/Frameworks"
+#MACOSPATHS="${MACOSPATHS} -syslibroot ${SDKPATH}"
+#MACOSPATHS="${MACOSPATHS} -L${SDKPATH}/System/iOSSupport/usr/lib"
+#MACOSPATHS="${MACOSPATHS} -L${TCPATH}/usr/lib/swift/uikitformac"
+
+
 # Other settings to feed to configure script.
 #ARCH="-arch armv6"
-export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${ARCH} -isysroot ${SDKPATH}"
-export LDFLAGS="${LDFLAGS} ${ARCH} -isysroot ${SDKPATH} -framework AudioToolbox -framework Foundation"
+export CFLAGS="${CFLAGS} -DPJ_SDK_NAME=\"\\\"`basename $SDKPATH`\\\"\" ${ARCH} ${MACOSPATHS}"
+export LDFLAGS="${LDFLAGS} ${ARCH} ${MACOSPATHS} -framework AudioToolbox -framework Foundation -framework UIKit"
 export AR="${TCPATH}/usr/bin/libtool -static -o"
 export AR_FLAGS=" "
 export RANLIB="echo ranlib"
