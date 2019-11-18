@@ -2415,7 +2415,7 @@ output/pjlib-x86_64-apple-darwin/sock_bsd.o: ../src/pj/sock_bsd.c ../include/pj/
   ../include/pj/addr_resolv.h ../include/pj/errno.h \
   ../include/pj/compat/errno.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
-  ../include/pj/unicode.h
+  ../include/pj/unicode.h ../include/pj/log.h
 output/pjlib-x86_64-apple-darwin/sock_select.o: ../src/pj/sock_select.c ../include/pj/sock_select.h \
   ../include/pj/types.h ../include/pj/config.h \
   ../include/pj/compat/cc_gcc.h ../include/pj/compat/os_auto.h \

@@ -1306,6 +1306,9 @@ build=$build_alias
 host=$host_alias
 target=$target_alias
 
+#for Mac Catalyst using iOS frameworks and files
+target=${target/darwin/-apple-darwin_ios}
+
 # FIXME: To remove some day.
 if test "x$host_alias" != x; then
   if test "x$build_alias" = x; then

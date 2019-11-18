@@ -14,7 +14,7 @@ hostname = Mac-mini-EastwindKurnosov.local
 uname -m = x86_64
 uname -r = 19.0.0
 uname -s = Darwin
-uname -v = Darwin Kernel Version 19.0.0: Wed Sep 25 20:18:50 PDT 2019; root:xnu-6153.11.26~2/RELEASE_X86_64
+uname -v = Darwin Kernel Version 19.0.0: Thu Oct 17 16:17:15 PDT 2019; root:xnu-6153.41.3~29/RELEASE_X86_64
 
 /usr/bin/uname -p = i386
 /bin/uname -X     = unknown
@@ -23,15 +23,15 @@ uname -v = Darwin Kernel Version 19.0.0: Wed Sep 25 20:18:50 PDT 2019; root:xnu-
 /usr/bin/arch -k       = unknown
 /usr/convex/getsysinfo = unknown
 /usr/bin/hostinfo      = Mach kernel version:
-	 Darwin Kernel Version 19.0.0: Wed Sep 25 20:18:50 PDT 2019; root:xnu-6153.11.26~2/RELEASE_X86_64
+	 Darwin Kernel Version 19.0.0: Thu Oct 17 16:17:15 PDT 2019; root:xnu-6153.41.3~29/RELEASE_X86_64
 Kernel configured for up to 4 processors.
 4 processors are physically available.
 4 processors are logically available.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3
 Primary memory available: 8.00 gigabytes
-Default processor set: 365 tasks, 1788 threads, 4 processors
-Load average: 5.04, Mach factor: 0.86
+Default processor set: 353 tasks, 1946 threads, 4 processors
+Load average: 39.87, Mach factor: 0.13
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -41,49 +41,47 @@ PATH: /usr/bin
 PATH: /bin
 PATH: /usr/sbin
 PATH: /sbin
-PATH: /Library/Apple/usr/bin
-PATH: /Library/Apple/bin
 
 
 ## ----------- ##
 ## Core tests. ##
 ## ----------- ##
 
-aconfigure:2487: checking build system type
-aconfigure:2501: result: x86_64-apple-darwin19.0.0
-aconfigure:2521: checking host system type
-aconfigure:2534: result: x86_64-apple-darwin
-aconfigure:2554: checking target system type
-aconfigure:2567: result: x86_64-apple-darwin
-aconfigure:2611: checking for x86_64-apple-darwin-gcc
-aconfigure:2638: result: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
-aconfigure:2907: checking for C compiler version
-aconfigure:2916: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version >&5
-Apple clang version 11.0.0 (clang-1100.0.33.8)
+aconfigure:2490: checking build system type
+aconfigure:2504: result: x86_64-apple-darwin19.0.0
+aconfigure:2524: checking host system type
+aconfigure:2537: result: x86_64-apple-darwin
+aconfigure:2557: checking target system type
+aconfigure:2570: result: x86_64-apple-darwin
+aconfigure:2614: checking for x86_64-apple-darwin-gcc
+aconfigure:2641: result: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+aconfigure:2910: checking for C compiler version
+aconfigure:2919: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version >&5
+Apple clang version 11.0.0 (clang-1100.0.33.12)
 Target: x86_64-apple-darwin19.0.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin
-aconfigure:2927: $? = 0
-aconfigure:2916: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v >&5
-Apple clang version 11.0.0 (clang-1100.0.33.8)
+aconfigure:2930: $? = 0
+aconfigure:2919: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v >&5
+Apple clang version 11.0.0 (clang-1100.0.33.12)
 Target: x86_64-apple-darwin19.0.0
 Thread model: posix
 InstalledDir: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin
-aconfigure:2927: $? = 0
-aconfigure:2916: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -V >&5
+aconfigure:2930: $? = 0
+aconfigure:2919: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -V >&5
 clang: error: unsupported option '-V -Wno-framework-include-private-from-public'
 clang: error: no input files
-aconfigure:2927: $? = 1
-aconfigure:2916: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -qversion >&5
+aconfigure:2930: $? = 1
+aconfigure:2919: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -qversion >&5
 clang: error: unknown argument '-qversion', did you mean '--version'?
 clang: error: no input files
-aconfigure:2927: $? = 1
-aconfigure:2947: checking whether the C compiler works
-aconfigure:2969: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=13.0 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk  -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -miphoneos-version-min=13.0 -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -framework UIKit conftest.c  >&5
+aconfigure:2930: $? = 1
+aconfigure:2950: checking whether the C compiler works
+aconfigure:2972: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=13.0 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk  -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -miphoneos-version-min=13.0 -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -framework UIKit conftest.c  >&5
 ld: framework not found UIKit
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
-aconfigure:2973: $? = 1
-aconfigure:3011: result: no
+aconfigure:2976: $? = 1
+aconfigure:3014: result: no
 aconfigure: failed program was:
 | /* confdefs.h */
 | #define PACKAGE_NAME "pjproject"
@@ -101,8 +99,8 @@ aconfigure: failed program was:
 |   ;
 |   return 0;
 | }
-aconfigure:3016: error: in `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1':
-aconfigure:3018: error: C compiler cannot create executables
+aconfigure:3019: error: in `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1':
+aconfigure:3021: error: C compiler cannot create executables
 See `config.log' for more details
 
 ## ---------------- ##
