@@ -15,10 +15,12 @@
  * PJMEDIA settings
  */
 
-/* We have our own native CoreAudio backend */
+/* Initializing own media factory */
 #define PJMEDIA_AUDIO_DEV_HAS_PORTAUDIO	0
 #define PJMEDIA_AUDIO_DEV_HAS_WMME		0
-#define PJMEDIA_AUDIO_DEV_HAS_COREAUDIO	1
+#define PJMEDIA_AUDIO_DEV_HAS_COREAUDIO	0
+#define PJMEDIA_AUDIO_DEV_HAS_NULL_AUDIO	1
+
 
 /* The CoreAudio backend has built-in echo canceller! */
 #define PJMEDIA_HAS_SPEEX_AEC    0
@@ -28,15 +30,17 @@
 #define PJMEDIA_HAS_G722_CODEC		0
 
 /* Use the built-in CoreAudio's iLBC codec (yay!) */
-#define PJMEDIA_HAS_ILBC_CODEC		1
-#define PJMEDIA_ILBC_CODEC_USE_COREAUDIO	1
+#define PJMEDIA_HAS_ILBC_CODEC		0
+#define PJMEDIA_ILBC_CODEC_USE_COREAUDIO	0
 
 /* Fine tune Speex's default settings for best performance/quality */
 #define PJMEDIA_CODEC_SPEEX_DEFAULT_QUALITY	5
 
 /* Video */
-#define PJMEDIA_HAS_VIDEO			1
-#define PJMEDIA_HAS_OPENH264_CODEC		1
+#define PJMEDIA_HAS_VIDEO			0
+//#define PJMEDIA_HAS_VIDEO			1
+//#define PJMEDIA_HAS_OPENH264_CODEC		1
+//#define PJMEDIA_HAS_VID_TOOLBOX_CODEC 1
 
 /*
  * PJSIP settings.
