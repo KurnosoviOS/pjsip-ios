@@ -253,7 +253,7 @@ fi
 
 if [ ! -f ${PJSIP_ARCHIVE} ]; then
   echo "Downloading pjsip..."
-  curl -# -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
+  #curl -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
 fi
 
 PJSIP_NAME=`tar tzf ${PJSIP_ARCHIVE} | sed -e 's@/.*@@' | uniq`
@@ -263,7 +263,12 @@ echo "Using ${PJSIP_NAME}..."
 
 if [ -d ${PJSIP_DIR} ]; then
     echo "Cleaning up..."
-#rm -rf ${PJSIP_DIR}
+rm -rf ${PJSIP_DIR}
+fi
+
+if [ ! -d ${PJSIP_DIR} ]; then
+  echo "Copying pjsip from directory.."
+  cp -R -f ${PJSIP_NAME} ${PJSIP_DIR}/
 fi
 
 echo "Unarchiving..."

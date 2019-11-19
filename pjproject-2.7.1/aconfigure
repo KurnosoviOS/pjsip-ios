@@ -1306,6 +1306,9 @@ build=$build_alias
 host=$host_alias
 target=$target_alias
 
+#for Mac Catalyst using iOS frameworks and files
+target=${target/darwin/-apple-darwin_ios}
+
 # FIXME: To remove some day.
 if test "x$host_alias" != x; then
   if test "x$build_alias" = x; then
@@ -5859,7 +5862,7 @@ case $target in
 		ac_os_objs="$ac_os_objs os_info_iphone.o os_core_darwin.o"
 		;;
 	  *darwin*)
-		ac_os_objs="$ac_os_objs os_core_darwin.o"
+		ac_os_objs="$ac_os_objs os_info_iphone.o os_core_darwin.o"
 		;;
 	esac
 	# QoS
@@ -6329,26 +6332,11 @@ else
 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... OpenSL ES" >&5
 $as_echo "Checking sound device backend... OpenSL ES" >&6; }
 	;;
-  *-apple-darwin_ios*)
+  *darwin*)
 	LIBS="$LIBS -framework CoreAudio -framework CoreFoundation -framework AudioToolbox -framework CFNetwork -framework UIKit"
 	ac_pjmedia_audiodev_objs="coreaudio_dev.o"
 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... AudioUnit" >&5
 $as_echo "Checking sound device backend... AudioUnit" >&6; }
-	;;
-  *darwin*)
-	LIBS="$LIBS -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox"
-	ac_pjmedia_audiodev_objs="coreaudio_dev.o"
-	if test "`uname -r`" = "6.8"; then
-		#ac_pa_cflags="$ac_pa_cflags -DPA_OLD_CORE_AUDIO -DMOSX_USE_NON_ATOMIC_FLAG_BITS"
-		#AC_MSG_RESULT([Setting additional PortAudio CFLAGS.. -DPA_OLD_CORE_AUDIO -DMOSX_USE_NON_ATOMIC_FLAG_BITS])
-		ac_pjmedia_snd=pa_old_darwinos
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... old coreaudio" >&5
-$as_echo "Checking sound device backend... old coreaudio" >&6; }
-	else
-		ac_pjmedia_snd=coreaudio
-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Checking sound device backend... coreaudio" >&5
-$as_echo "Checking sound device backend... coreaudio" >&6; }
-	fi
 	;;
   *cygwin* | *mingw*)
 	ac_pjmedia_snd=win32
@@ -10075,4 +10063,3 @@ Further customizations can be put in:
 
 The next step now is to run 'make dep' and 'make'.
 " >&6; }
-
