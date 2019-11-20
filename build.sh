@@ -298,7 +298,8 @@ configure="./configure-macos --with-ssl=${OPENSSL_DIR}"
 cd ${PJSIP_DIR}
 echo "cd PJSIP_DIR: ${PJSIP_DIR}"
 
-${configure}
+#${configure}
+#exit 1
 
 function _build() {
   ARCH=$1
@@ -308,11 +309,15 @@ function _build() {
   pwd
 
   make distclean > ${LOG} 2>&1
+  echo "---build: make distclean completed"
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
   ARCH="-arch ${ARCH}" ${configure} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
+  echo "---build: make dep completed"
   make clean >> ${LOG}
+  echo "---build: make clean completed"
   make >> ${LOG} 2>&1
+  echo "---build: make completed"
 
   copy_libs ${ARCH}
 }

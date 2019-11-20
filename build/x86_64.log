@@ -1,0 +1,251 @@
+build.mak:2: /Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak: No such file or directory
+Makefile:2: build/host-unix.mak: No such file or directory
+make: *** No rule to make target `build/host-unix.mak'.  Stop.
+---configure-macos started
+configure-macos: IPHONESDK is not specified, choosing MacOSX10.15.sdk
+configure: SDKPATH: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+configure-macos: CC is not specified, choosing /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+configure-macos: MIN_IOS is not specified, choosing 13.0
+configure-macos: CXX is not specified, using /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+configure-macos: calling ./aconfigure with env vars:
+ MIN_IOS = -miphoneos-version-min=13.0
+ CC = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+ CXX = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+ SDKPATH = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+ CFLAGS = -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=13.0 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks
+ LDFLAGS = -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -miphoneos-version-min=13.0 -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -framework AudioToolbox -framework Foundation -framework UIKit
+ AR = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -o
+ RANLIB = echo ranlib
+ ARCH = x86_64 -target x86_64-apple-ios13.0-macabi
+checking build system type... x86_64-apple-darwin19.0.0
+checking host system type... x86_64-apple-darwin
+checking target system type... x86_64-apple-darwin
+checking for x86_64-apple-darwin-gcc... /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang accepts -g... yes
+checking for /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang option to accept ISO C89... none needed
+checking whether we are using the GNU C++ compiler... yes
+checking whether /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang accepts -g... yes
+checking for x86_64-apple-darwin-ranlib... echo ranlib
+checking for x86_64-apple-darwin-ar... /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -o
+checking for pthread_create in -lpthread... yes
+checking for puts in -lwsock32... no
+checking for puts in -lws2_32... no
+checking for puts in -lole32... no
+checking for puts in -lwinmm... no
+checking for puts in -lsocket... no
+checking for puts in -lrt... no
+checking for sin in -lm... yes
+checking for uuid_generate in -luuid... no
+checking for uuid_generate in -luuid... (cached) no
+checking for library containing gethostbyname... none required
+Setting PJ_M_NAME to x86_64
+checking memory alignment... 8 bytes
+checking how to run the C preprocessor... /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch x86_64 -target x86_64-apple-ios13.0-macabi -E -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether byte ordering is bigendian... no
+Checking if floating point is disabled... no
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking linux/socket.h usability... no
+checking linux/socket.h presence... no
+checking for linux/socket.h... no
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in_systm.h usability... yes
+checking netinet/in_systm.h presence... yes
+checking for netinet/in_systm.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for netinet/ip.h... yes
+checking netinet/tcp.h usability... yes
+checking netinet/tcp.h presence... yes
+checking for netinet/tcp.h... yes
+checking ifaddrs.h usability... yes
+checking ifaddrs.h presence... yes
+checking for ifaddrs.h... yes
+checking for getifaddrs... yes
+checking semaphore.h usability... yes
+checking semaphore.h presence... yes
+checking for semaphore.h... yes
+checking setjmp.h usability... yes
+checking setjmp.h presence... yes
+checking for setjmp.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/timeb.h usability... yes
+checking sys/timeb.h presence... yes
+checking for sys/timeb.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/filio.h usability... yes
+checking sys/filio.h presence... yes
+checking for sys/filio.h... yes
+checking sys/sockio.h usability... yes
+checking sys/sockio.h presence... yes
+checking for sys/sockio.h... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking winsock.h usability... no
+checking winsock.h presence... no
+checking for winsock.h... no
+checking winsock2.h usability... no
+checking winsock2.h presence... no
+checking for winsock2.h... no
+checking for mswsock.h... no
+checking ws2tcpip.h usability... no
+checking ws2tcpip.h presence... no
+checking for ws2tcpip.h... no
+checking uuid/uuid.h usability... yes
+checking uuid/uuid.h presence... yes
+checking for uuid/uuid.h... yes
+checking for net/if.h... yes
+checking for localtime_r... yes
+Setting PJ_OS_NAME to x86_64-apple-darwin
+Setting PJ_HAS_ERRNO_VAR to 1
+Setting PJ_HAS_HIGH_RES_TIMER to 1
+Setting PJ_HAS_MALLOC to 1
+Setting PJ_NATIVE_STRING_IS_UNICODE to 0
+Setting PJ_ATOMIC_VALUE_TYPE to long
+checking if inet_aton() is available... yes
+checking if inet_pton() is available... yes
+checking if inet_ntop() is available... yes
+checking if getaddrinfo() is available... yes
+checking if sockaddr_in has sin_len member... yes
+checking if socklen_t is available... yes
+checking if IPV6_V6ONLY is available... yes
+checking if SO_ERROR is available... yes
+checking if pthread_rwlock_t is available... yes
+checking if pthread_mutexattr_settype() is available... no
+checking if pthread_mutexattr_t has recursive member... no
+checking ioqueue backend... select()
+Building shared libraries... no
+checking sys/soundcard.h usability... no
+checking sys/soundcard.h presence... no
+checking for sys/soundcard.h... no
+checking linux/soundcard.h usability... no
+checking linux/soundcard.h presence... no
+checking for linux/soundcard.h... no
+checking machine/soundcard.h usability... no
+checking machine/soundcard.h presence... no
+checking for machine/soundcard.h... no
+Checking sound device backend... AudioUnit
+Checking if AVFoundation framework is available... yes
+Checking if VideoToolbox framework is available... yes
+Checking if OpenGLES framework is available... no
+Checking if small filter is disabled... no
+Checking if large filter is disabled... no
+Checking if Speex AEC is disabled...no
+Checking if G.711 codec is disabled...no
+Checking if L16 codec is disabled...no
+Checking if GSM codec is disabled...no
+Checking if G.722 codec is disabled...no
+Checking if G.722.1 codec is disabled...no
+Checking if Speex codec is disabled...no
+Checking if iLBC codec is disabled...no
+Checking if libsamplerate is enabled...no
+Building libresample as shared library... no
+Checking if SDL is disabled... yes
+Checking if ffmpeg is disabled... yes
+checking for v4l2_open in -lv4l2... no
+Checking if OpenH264 is disabled... yes
+Skipping Intel IPP settings (not wanted)
+checking for OpenSSL installations..
+Using SSL prefix... /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl
+checking openssl/ssl.h usability... yes
+checking openssl/ssl.h presence... no
+aconfigure: WARNING: openssl/ssl.h: accepted by the compiler, rejected by the preprocessor!
+aconfigure: WARNING: openssl/ssl.h: proceeding with the compiler's result
+checking for openssl/ssl.h... yes
+checking for ERR_load_BIO_strings in -lcrypto... yes
+checking for SSL_CTX_new in -lssl... yes
+OpenSSL library found, SSL support enabled
+checking for EVP_aes_128_gcm in -lcrypto... yes
+OpenSSL has AES GCM support, SRTP will use OpenSSL
+Checking if OpenCORE AMR support is disabled... yes
+Checking if SILK support is disabled... yes
+checking for OPUS installations..
+checking opus/opus.h usability... no
+checking opus/opus.h presence... no
+checking for opus/opus.h... no
+checking for opus_repacketizer_get_size in -lopus... no
+OPUS library not found, OPUS support disabled
+Checking if bcg729 is disabled... yes
+Checking if libyuv is disabled...no
+Checking if libwebrtc is disabled...no
+checking if select() needs correct nfds... no (default)
+** Decided that select() doesn't need correct nfds (please check)
+checking if pj_thread_create() should enforce stack size... no (default)
+checking if pj_thread_create() should allocate stack... no (default)
+** Setting non-blocking recv() retval to EAGAIN (please check)
+** Setting non-blocking connect() retval to EINPROGRESS (please check)
+aconfigure: creating ./config.status
+config.status: creating build.mak
+config.status: error: cannot find input file: `build/os-auto.mak.in'
+Makefile:2: build/host-unix.mak: No such file or directory
+make: *** No rule to make target `build/host-unix.mak'.  Stop.
+Makefile:2: build/host-unix.mak: No such file or directory
+make: *** No rule to make target `build/host-unix.mak'.  Stop.
