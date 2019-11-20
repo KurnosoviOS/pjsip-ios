@@ -253,7 +253,7 @@ fi
 
 if [ ! -f ${PJSIP_ARCHIVE} ]; then
   echo "Downloading pjsip..."
-  #curl -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
+  curl -# -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
 fi
 
 PJSIP_NAME=`tar tzf ${PJSIP_ARCHIVE} | sed -e 's@/.*@@' | uniq`
@@ -261,14 +261,17 @@ PJSIP_NAME="pjproject-2.7.1"
 PJSIP_DIR=${BUILD_DIR}/${PJSIP_NAME}
 echo "Using ${PJSIP_NAME}..."
 
+chmod -R o+rwx ${BUILD_DIR}
+
 if [ -d ${PJSIP_DIR} ]; then
     echo "Cleaning up..."
-rm -rf ${PJSIP_DIR}
+    rm -rf ${PJSIP_DIR}
 fi
 
 if [ ! -d ${PJSIP_DIR} ]; then
-  echo "Copying pjsip from directory.."
-  cp -R -f ${PJSIP_NAME} ${PJSIP_DIR}/
+    echo "Copying pjsip to build folder..."
+    cp -R -f ${PJSIP_NAME} ${PJSIP_DIR}/
+    chmod -R o+rwx ${PJSIP_DIR}
 fi
 
 echo "Unarchiving..."
