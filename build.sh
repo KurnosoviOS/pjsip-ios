@@ -253,7 +253,7 @@ fi
 
 if [ ! -f ${PJSIP_ARCHIVE} ]; then
   echo "Downloading pjsip..."
-  curl -# -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
+  curl -o ${PJSIP_ARCHIVE} ${PJSIP_URL}
 fi
 
 PJSIP_NAME=`tar tzf ${PJSIP_ARCHIVE} | sed -e 's@/.*@@' | uniq`
@@ -295,10 +295,10 @@ echo ${OPENSSL_DIR}
 #configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg"
 configure="./configure-macos --with-ssl=${OPENSSL_DIR}"
 
-
-
 cd ${PJSIP_DIR}
 echo "cd PJSIP_DIR: ${PJSIP_DIR}"
+
+${configure}
 
 function _build() {
   ARCH=$1
@@ -309,7 +309,7 @@ function _build() {
 
   make distclean > ${LOG} 2>&1
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ${configure} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
