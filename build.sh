@@ -100,6 +100,9 @@ copy_libs () {
 
 copy_mac_libs () {
   DST=${1}
+
+  rm lib/*
+
   cp pjlib/lib-${DST}/libpj-${DST}-apple-darwin.a lib/libpj-${DST}-apple-darwin.a
   cp pjlib-util/lib-${DST}/libpjlib-util-${DST}-apple-darwin.a lib/libpjlib-util-${DST}-apple-darwin.a
   cp pjmedia/lib-${DST}/libpjmedia-${DST}-apple-darwin.a lib/libpjmedia-${DST}-apple-darwin.a
@@ -348,6 +351,7 @@ macos_64
 
 #make distclean > /dev/null
 
+rm ../../Pod/pjsip-lib/*
 copy_mac_libs "x86_64"
 
 #cp -R ${OPENH264_DIR}/arm64/include/wels/* ../../Pod/$FOLDER_PJSIP/openh264/wels
