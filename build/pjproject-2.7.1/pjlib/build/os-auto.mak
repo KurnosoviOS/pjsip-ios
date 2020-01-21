@@ -1,7 +1,7 @@
 # pjlib/build/os-auto.mak.  Generated from os-auto.mak.in by configure.
 
 # Determine OS specific files
-AC_OS_OBJS=ioqueue_select.o file_access_unistd.o file_io_ansi.o os_core_unix.o os_error_unix.o os_time_unix.o os_timestamp_posix.o os_info_iphone.o os_core_darwin.o sock_qos_darwin.o sock_qos_bsd.o guid_simple.o
+AC_OS_OBJS=ioqueue_select.o file_access_unistd.o file_io_ansi.o os_core_unix.o os_error_unix.o os_time_unix.o os_timestamp_posix.o os_core_darwin.o sock_qos_darwin.o sock_qos_bsd.o guid_simple.o
 
 #
 # PJLIB_OBJS specified here are object files to be included in PJLIB
@@ -24,7 +24,7 @@ export TEST_OBJS +=	main.o
 # Additional LDFLAGS for pjlib-test
 #
 # Disabled, as this causes duplicated LDFLAGS, which may raise linking errors
-#export TEST_LDFLAGS += -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -mmacosx-version-min=10.15 -arch x86_64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -isystem /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/usr/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -framework AudioToolbox -framework Foundation -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -lssl -lcrypto -lm -lpthread  -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -framework Foundation -framework AppKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox
+#export TEST_LDFLAGS += -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/lib -O2  -mmacosx-version-min=10.15 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/lib -lssl -lcrypto -lm -lpthread  -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -framework Foundation -framework AppKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox
 
 #
 # TARGETS are make targets in the Makefile, to be executed for this given

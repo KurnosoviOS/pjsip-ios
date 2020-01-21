@@ -13,7 +13,7 @@
 // Please contact the author.
 // Version: 1.0.1.j.
 
-// pjsip-ios
+// pjsip-macos
 #define COCOAPODS_POD_AVAILABLE_pjsip_ios
 #define COCOAPODS_VERSION_MAJOR_pjsip_ios 0
 #define COCOAPODS_VERSION_MINOR_pjsip_ios 1

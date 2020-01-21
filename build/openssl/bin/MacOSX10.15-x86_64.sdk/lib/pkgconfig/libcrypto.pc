@@ -1,4 +1,4 @@
-prefix=/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk
+prefix=/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

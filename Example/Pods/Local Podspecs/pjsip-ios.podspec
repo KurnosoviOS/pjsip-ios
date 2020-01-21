@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint pjsip-ios.podspec' to ensure this is a
+# Be sure to run `pod lib lint pjsip-macos.podspec' to ensure this is a
 # valid spec and remove all comments before submitting the spec.
 #
 # Any lines starting with a # are optional, but encouraged
@@ -8,16 +8,16 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "pjsip-ios"
+  s.name             = "pjsip-macos"
   s.version          = "0.1.2"
   s.summary          = "PJSIP for ios"
   s.description      = <<-DESC
                        Other pods for pjsip were just not in a stable state. So I am creating a new one.
                        DESC
-  s.homepage         = "https://github.com/petester42/pjsip-ios.git"
+  s.homepage         = "https://github.com/petester42/pjsip-macos.git"
   s.license          = 'MIT'
   s.author           = { "Pierre-Marc Airoldi" => "pierremarcairoldi@gmail.com" }
-  s.source           = { :git => "https://github.com/petester42/pjsip-ios.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/petester42/pjsip-macos.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/petester42'
 
   s.platform     = :ios, '6.0'
@@ -36,6 +36,6 @@ Pod::Spec.new do |s|
 
   s.xcconfig = {
     'GCC_PREPROCESSOR_DEFINITIONS' => 'PJ_AUTOCONF=1',
-    'HEADER_SEARCH_PATHS'  => '$(PODS_ROOT)/pjsip-ios/Pod/pjsip-include'
+    'HEADER_SEARCH_PATHS'  => '$(PODS_ROOT)/pjsip-macos/Pod/pjsip-include'
   }
 end

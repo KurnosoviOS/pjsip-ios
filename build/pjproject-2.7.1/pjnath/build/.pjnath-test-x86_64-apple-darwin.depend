@@ -4,8 +4,6 @@ output/pjnath-test-x86_64-apple-darwin/main.o: ../src/pjnath-test/main.c ../src/
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -56,6 +54,8 @@ output/pjnath-test-x86_64-apple-darwin/main.o: ../src/pjnath-test/main.c ../src/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -153,8 +153,6 @@ output/pjnath-test-x86_64-apple-darwin/ice_test.o: ../src/pjnath-test/ice_test.c
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -205,6 +203,8 @@ output/pjnath-test-x86_64-apple-darwin/ice_test.o: ../src/pjnath-test/ice_test.c
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -303,8 +303,6 @@ output/pjnath-test-x86_64-apple-darwin/stun.o: ../src/pjnath-test/stun.c ../src/
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -355,6 +353,8 @@ output/pjnath-test-x86_64-apple-darwin/stun.o: ../src/pjnath-test/stun.c ../src/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -452,8 +452,6 @@ output/pjnath-test-x86_64-apple-darwin/sess_auth.o: ../src/pjnath-test/sess_auth
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -504,6 +502,8 @@ output/pjnath-test-x86_64-apple-darwin/sess_auth.o: ../src/pjnath-test/sess_auth
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -601,8 +601,6 @@ output/pjnath-test-x86_64-apple-darwin/server.o: ../src/pjnath-test/server.c ../
   ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -647,6 +645,8 @@ output/pjnath-test-x86_64-apple-darwin/server.o: ../src/pjnath-test/server.c ../
   ../../pjlib/include/pj/string.h ../../pjlib/include/pj/compat/string.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/string.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/_types.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_size_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_null.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_rsize_t.h \
@@ -753,8 +753,6 @@ output/pjnath-test-x86_64-apple-darwin/concur_test.o: ../src/pjnath-test/concur_
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -805,6 +803,8 @@ output/pjnath-test-x86_64-apple-darwin/concur_test.o: ../src/pjnath-test/concur_
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -903,8 +903,6 @@ output/pjnath-test-x86_64-apple-darwin/stun_sock_test.o: ../src/pjnath-test/stun
   ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -955,6 +953,8 @@ output/pjnath-test-x86_64-apple-darwin/stun_sock_test.o: ../src/pjnath-test/stun
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -1053,8 +1053,6 @@ output/pjnath-test-x86_64-apple-darwin/turn_sock_test.o: ../src/pjnath-test/turn
   ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -1105,6 +1103,8 @@ output/pjnath-test-x86_64-apple-darwin/turn_sock_test.o: ../src/pjnath-test/turn
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \
@@ -1203,8 +1203,6 @@ output/pjnath-test-x86_64-apple-darwin/test.o: ../src/pjnath-test/test.c ../src/
   ../../pjlib/include/pj/config.h ../../pjlib/include/pj/compat/cc_gcc.h \
   ../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/compat/m_auto.h \
   ../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \
@@ -1255,6 +1253,8 @@ output/pjnath-test-x86_64-apple-darwin/test.o: ../src/pjnath-test/test.c ../src/
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
   ../../pjlib/include/pj/except.h ../../pjlib/include/pj/compat/setjmp.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/setjmp.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../pjlib/include/pj/log.h ../../pjlib/include/pj/fifobuf.h \
   ../../pjlib/include/pj/file_access.h ../../pjlib/include/pj/file_io.h \
   ../../pjlib/include/pj/guid.h ../../pjlib/include/pj/hash.h \

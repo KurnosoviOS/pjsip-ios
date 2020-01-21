@@ -35,12 +35,6 @@ buildMac()
 
 	echo "Building ${OPENSSL_VERSION} for ${ARCH}"
 
-	TARGET="darwin-i386-cc"
-
-	if [[ $ARCH == "x86_64" ]]; then
-		TARGET="darwin64-x86_64-cc"
-	fi
-
 	pushd . > /dev/null
 	cd "${OPENSSL_VERSION}"
 	./Configure ${TARGET} --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" &> "../${OPENSSL_VERSION}-${ARCH}.log"
@@ -117,8 +111,8 @@ echo "Unpacking openssl"
 tar xfz "${OPENSSL_VERSION}.tar.gz"
 chmod -R o+rwx "${OPENSSL_VERSION}"
 
-#buildMac "i386"
-buildIOS "macos64"
+buildMac "x86_64"
+#buildIOS "macos64"
 
 echo "Copying headers"
 cp /tmp/${OPENSSL_VERSION}-x86_64/include/openssl/* include/openssl/

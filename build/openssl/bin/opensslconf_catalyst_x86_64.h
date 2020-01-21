@@ -122,8 +122,8 @@ extern "C" {
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines"
-#define OPENSSLDIR "/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk"
+#define ENGINESDIR "/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines"
+#define OPENSSLDIR "/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk"
 #endif
 #endif
 

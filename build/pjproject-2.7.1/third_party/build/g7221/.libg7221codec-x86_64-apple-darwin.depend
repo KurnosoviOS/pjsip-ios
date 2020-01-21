@@ -261,8 +261,6 @@ output/libg7221codec-x86_64-apple-darwin/basic_op.o: ../../g7221/common/basic_op
   ../../../pjlib/include/pj/compat/cc_gcc.h \
   ../../../pjlib/include/pj/compat/os_auto.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/TargetConditionals.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/Availability.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/AvailabilityInternal.h \
   ../../../pjlib/include/pj/compat/m_auto.h \
   ../../../pjlib/include/pj/compat/size_t.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stddef.h \

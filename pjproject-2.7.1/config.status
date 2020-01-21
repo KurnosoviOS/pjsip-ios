@@ -433,7 +433,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1'
+ac_pwd='/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/pjproject-2.7.1'
 srcdir='.'
 test -n "$AWK" || AWK=awk
 # The default lists apply if the user does not specify any file.
@@ -698,7 +698,7 @@ S["CPP"]="/Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/D
 S["ac_cross_compile"]="x86_64-apple-darwin-"
 S["ac_shlib_suffix"]="dylib"
 S["ac_build_mak_vars"]=""
-S["ac_pjdir"]="/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1"
+S["ac_pjdir"]="/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/pjproject-2.7.1"
 S["CC_CFLAGS"]="-Wall"
 S["CC_OPTIMIZE"]="-O2"
 S["CC_DEF"]="-D"

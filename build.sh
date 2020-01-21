@@ -263,12 +263,13 @@ echo "Using ${PJSIP_NAME}..."
 
 if [ -d ${PJSIP_DIR} ]; then
     echo "Cleaning up..."
-#rm -rf ${PJSIP_DIR}
+rm -rf ${PJSIP_DIR}
 fi
 
 echo "Unarchiving..."
 pushd . > /dev/null
 echo "cd BUILD_DIR: ${BUILD_DIR}"
+cp -R ${PJSIP_NAME} ${PJSIP_DIR}
 cd ${BUILD_DIR}
 #tar -xf ${PJSIP_ARCHIVE}
 popd > /dev/null
@@ -299,6 +300,7 @@ function _build() {
   echo "Building for ${ARCH}..."
   pwd
 
+  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
   make distclean > ${LOG} 2>&1
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
   ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1

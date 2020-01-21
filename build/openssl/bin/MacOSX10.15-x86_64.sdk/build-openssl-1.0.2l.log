@@ -2038,19 +2038,19 @@ clang: warning: overriding '-mmacosx-version-min=10.15' option with '--target=x8
 ( :; LIBDEPS="${LIBDEPS:--Wl,-search_paths_first -L.. -lssl -L.. -lcrypto  }"; LDCMD="${LDCMD:-/Applications/Xcode.app/Contents/Developer/usr/bin/gcc -arch x86_64}"; LDFLAGS="${LDFLAGS:--isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk  -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -fembed-bitcode --target=x86_64-apple-ios13.0-macabi -mmacosx-version-min=10.15 -arch x86_64 -O3 -DL_ENDIAN -Wall}"; LIBPATH=`for x in $LIBDEPS; do echo $x; done | sed -e 's/^ *-L//;t' -e d | uniq`; LIBPATH=`echo $LIBPATH | sed -e 's/ /:/g'`; LD_LIBRARY_PATH=$LIBPATH:$LD_LIBRARY_PATH ${LDCMD} ${LDFLAGS} -o ${APPNAME:=dummytest} dummytest.o  ${LIBDEPS} )
 clang: warning: overriding '-mmacosx-version-min=10.15' option with '--target=x86_64-apple-ios13.0-macabi' [-Woverriding-t-option]
 Doing certs/demo
-WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
-WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
-WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
-WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/bin'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/include'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/include/openssl'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/misc'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/certs'
-created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/private'
+WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
+WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
+WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
+WARNING: can't open config file: /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/openssl.cnf
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/bin'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/include'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/include/openssl'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/misc'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/certs'
+created directory `/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/private'
 making install in crypto...
 making install in crypto/objects...
 making install in crypto/md4...
@@ -2106,14 +2106,14 @@ making install in crypto/cmac...
 making install in ssl...
 making install in engines...
 making install in engines/ccgost...
-[ -n "/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk" ] # should be set by top Makefile...
+[ -n "/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk" ] # should be set by top Makefile...
 if [ -n "" ]; then \
 		set -e; \
 		echo installing gost; \
 		pfx=lib; \
 		if expr "darwin64-x86_64-cc" : "Cygwin" >/dev/null; then \
 			sfx=".so"; \
-			cp cyggost.dll /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
+			cp cyggost.dll /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
 		else \
 			case "-I../../include -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk  -DOPENSSL_THREADS -D_REENTRANT -DDSO_DLFCN -DHAVE_DLFCN_H -fembed-bitcode --target=x86_64-apple-ios13.0-macabi -mmacosx-version-min=10.15 -arch x86_64 -O3 -DL_ENDIAN -Wall" in \
 			*DSO_BEOS*) sfx=".so";; \
@@ -2122,10 +2122,10 @@ if [ -n "" ]; then \
 			*DSO_WIN32*) sfx="eay32.dll"; pfx=;; \
 			*) sfx=".bad";; \
 			esac; \
-			cp ${pfx}gost$sfx /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
+			cp ${pfx}gost$sfx /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
 		fi; \
-		chmod 555 /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
-		mv -f /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx; \
+		chmod 555 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new; \
+		mv -f /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx.new /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/engines/${pfx}gost$sfx; \
 	fi
 making install in apps...
 installing openssl
@@ -2137,9 +2137,9 @@ make[1]: Nothing to be done for `install'.
 making install in tools...
 installing libcrypto.a
 installing libssl.a
-cp libcrypto.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
-chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/libcrypto.pc
-cp libssl.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
-chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/libssl.pc
-cp openssl.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
-chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/openssl.pc
+cp libcrypto.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
+chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/libcrypto.pc
+cp libssl.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
+chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/libssl.pc
+cp openssl.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig
+chmod 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk/lib/pkgconfig/openssl.pc

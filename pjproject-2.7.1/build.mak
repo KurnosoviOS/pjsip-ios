@@ -1,4 +1,4 @@
-export PJDIR := /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1
+export PJDIR := /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/pjproject-2.7.1
 include $(PJDIR)/version.mak
 export PJ_DIR := $(PJDIR)
 

@@ -3,8 +3,8 @@
 # Perl c_rehash script, scan all files in a directory
 # and add symbolic links to their hash values.
 
-my $dir = "/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk";
-my $prefix = "/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/bin/MacOSX10.15-x86_64.sdk";
+my $dir = "/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk";
+my $prefix = "/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/bin/MacOSX10.15-x86_64.sdk";
 
 my $openssl = $ENV{OPENSSL} || "openssl";
 my $pwd;

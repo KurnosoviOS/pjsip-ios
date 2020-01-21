@@ -1,5 +1,5 @@
 /* $Id: endpoint.c 5311 2016-05-20 04:17:00Z ming $ */
-/*
+/* 
  * Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
  * Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
  *
@@ -15,7 +15,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
 #include <pjmedia/endpoint.h>
 #include <pjmedia/errno.h>
@@ -44,7 +44,7 @@ static const pj_str_t STR_SENDRECV = { "sendrecv", 8 };
 
 
 /* Config to control rtpmap inclusion for static payload types */
-pj_bool_t pjmedia_add_rtpmap_for_static_pt =
+pj_bool_t pjmedia_add_rtpmap_for_static_pt = 
 	    PJMEDIA_ADD_RTPMAP_FOR_STATIC_PT;
 
 /* Config to control use of RFC3890 TIAS */
@@ -153,7 +153,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create2(pj_pool_factory *pf,
 
     /* Create ioqueue if none is specified. */
     if (endpt->ioqueue == NULL) {
-
+	
 	endpt->own_ioqueue = PJ_TRUE;
 
 	status = pj_ioqueue_create( endpt->pool, PJ_IOQUEUE_MAX_HANDLES,
@@ -162,7 +162,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create2(pj_pool_factory *pf,
 	    goto on_error;
 
 	if (worker_cnt == 0) {
-	    PJ_LOG(4,(THIS_FILE, "Warning: no worker thread is created in"
+	    PJ_LOG(4,(THIS_FILE, "Warning: no worker thread is created in"  
 				 "media endpoint for internal ioqueue"));
 	}
     }
@@ -291,9 +291,9 @@ PJ_DEF(unsigned) pjmedia_endpt_get_thread_count(pjmedia_endpt *endpt)
 }
 
 /**
- * Get a reference to one of the worker threads of the media endpoint
+ * Get a reference to one of the worker threads of the media endpoint 
  */
-PJ_DEF(pj_thread_t*) pjmedia_endpt_get_thread(pjmedia_endpt *endpt,
+PJ_DEF(pj_thread_t*) pjmedia_endpt_get_thread(pjmedia_endpt *endpt, 
 					      unsigned index)
 {
     PJ_ASSERT_RETURN(endpt, NULL);
@@ -502,13 +502,13 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_audio_sdp(pjmedia_endpt *endpt,
 		pj_size_t test_len = 2;
 
 		/* Check if buf still available */
-		test_len = dec_fmtp->param[ii].val.slen +
+		test_len = dec_fmtp->param[ii].val.slen + 
 			   dec_fmtp->param[ii].name.slen + 2;
 		if (test_len + buf_len >= MAX_FMTP_STR_LEN)
 		    return PJ_ETOOBIG;
 
 		/* Print delimiter */
-		buf_len += pj_ansi_snprintf(&buf[buf_len],
+		buf_len += pj_ansi_snprintf(&buf[buf_len], 
 					    MAX_FMTP_STR_LEN - buf_len,
 					    (ii == 0?" ":";"));
 
@@ -523,9 +523,9 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_audio_sdp(pjmedia_endpt *endpt,
 					    (int)dec_fmtp->param[ii].val.slen,
 					    dec_fmtp->param[ii].val.ptr);
 		else
-		    buf_len += pj_ansi_snprintf(&buf[buf_len],
+		    buf_len += pj_ansi_snprintf(&buf[buf_len], 
 					    MAX_FMTP_STR_LEN - buf_len,
-					    "%.*s",
+					    "%.*s", 
 					    (int)dec_fmtp->param[ii].val.slen,
 					    dec_fmtp->param[ii].val.ptr);
 	    }
@@ -576,7 +576,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_audio_sdp(pjmedia_endpt *endpt,
     if (max_bitrate && pjmedia_add_bandwidth_tias_in_sdp) {
 	const pj_str_t STR_BANDW_MODIFIER = { "TIAS", 4 };
 	pjmedia_sdp_bandw *b;
-
+	    
 	b = PJ_POOL_ALLOC_T(pool, pjmedia_sdp_bandw);
 	b->modifier = STR_BANDW_MODIFIER;
 	b->value = max_bitrate;
@@ -621,7 +621,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_video_sdp(pjmedia_endpt *endpt,
 	return status;
 
     cnt = PJ_ARRAY_SIZE(codec_info);
-    status = pjmedia_vid_codec_mgr_enum_codecs(NULL, &cnt,
+    status = pjmedia_vid_codec_mgr_enum_codecs(NULL, &cnt, 
 					       codec_info, codec_prio);
 
     /* Check that there are not too many codecs */
@@ -683,22 +683,22 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_video_sdp(pjmedia_endpt *endpt,
 	    pjmedia_codec_fmtp *dec_fmtp = &codec_param.dec_fmtp;
 
 	    /* Print codec PT */
-	    buf_len += pj_ansi_snprintf(buf,
-					MAX_FMTP_STR_LEN - buf_len,
-					"%d",
+	    buf_len += pj_ansi_snprintf(buf, 
+					MAX_FMTP_STR_LEN - buf_len, 
+					"%d", 
 					codec_info[i].pt);
 
 	    for (j = 0; j < dec_fmtp->cnt; ++j) {
 		pj_size_t test_len = 2;
 
 		/* Check if buf still available */
-		test_len = dec_fmtp->param[j].val.slen +
+		test_len = dec_fmtp->param[j].val.slen + 
 			   dec_fmtp->param[j].name.slen + 2;
 		if (test_len + buf_len >= MAX_FMTP_STR_LEN)
 		    return PJ_ETOOBIG;
 
 		/* Print delimiter */
-		buf_len += pj_ansi_snprintf(&buf[buf_len],
+		buf_len += pj_ansi_snprintf(&buf[buf_len], 
 					    MAX_FMTP_STR_LEN - buf_len,
 					    (j == 0?" ":";"));
 
@@ -713,9 +713,9 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_video_sdp(pjmedia_endpt *endpt,
 					    (int)dec_fmtp->param[j].val.slen,
 					    dec_fmtp->param[j].val.ptr);
 		else
-		    buf_len += pj_ansi_snprintf(&buf[buf_len],
+		    buf_len += pj_ansi_snprintf(&buf[buf_len], 
 					    MAX_FMTP_STR_LEN - buf_len,
-					    "%.*s",
+					    "%.*s", 
 					    (int)dec_fmtp->param[j].val.slen,
 					    dec_fmtp->param[j].val.ptr);
 	    }
@@ -726,7 +726,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_video_sdp(pjmedia_endpt *endpt,
 	    attr->value = pj_strdup3(pool, buf);
 	    m->attr[m->attr_count++] = attr;
 	}
-
+    
 	/* Find maximum bitrate in this media */
 	vfd = pjmedia_format_get_video_format_detail(&codec_param.enc_fmt,
 						     PJ_TRUE);
@@ -740,7 +740,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_create_video_sdp(pjmedia_endpt *endpt,
     if (max_bitrate && pjmedia_add_bandwidth_tias_in_sdp) {
 	const pj_str_t STR_BANDW_MODIFIER = { "TIAS", 4 };
 	pjmedia_sdp_bandw *b;
-
+	    
 	b = PJ_POOL_ALLOC_T(pool, pjmedia_sdp_bandw);
 	b->modifier = STR_BANDW_MODIFIER;
 	b->value = max_bitrate;
@@ -867,11 +867,11 @@ static const char *good_number(char *buf, pj_int32_t val)
     if (val < 1000) {
 	pj_ansi_sprintf(buf, "%d", val);
     } else if (val < 1000000) {
-	pj_ansi_sprintf(buf, "%d.%dK",
+	pj_ansi_sprintf(buf, "%d.%dK", 
 			val / 1000,
 			(val % 1000) / 100);
     } else {
-	pj_ansi_sprintf(buf, "%d.%02dM",
+	pj_ansi_sprintf(buf, "%d.%02dM", 
 			val / 1000000,
 			(val % 1000000) / 10000);
     }
@@ -891,7 +891,7 @@ PJ_DEF(pj_status_t) pjmedia_endpt_dump(pjmedia_endpt *endpt)
     PJ_LOG(3,(THIS_FILE, "Dumping PJMEDIA capabilities:"));
 
     count = PJ_ARRAY_SIZE(codec_info);
-    if (pjmedia_codec_mgr_enum_codecs(&endpt->codec_mgr,
+    if (pjmedia_codec_mgr_enum_codecs(&endpt->codec_mgr, 
 				      &count, codec_info, prio) != PJ_SUCCESS)
     {
 	PJ_LOG(3,(THIS_FILE, " -error: failed to enum codecs"));
@@ -920,14 +920,14 @@ PJ_DEF(pj_status_t) pjmedia_endpt_dump(pjmedia_endpt *endpt)
 	    pj_bzero(&param, sizeof(pjmedia_codec_param));
 	}
 
-	PJ_LOG(3,(THIS_FILE,
+	PJ_LOG(3,(THIS_FILE, 
 		  "   %s codec #%2d: pt=%d (%.*s @%dKHz/%d, %sbps, %dms%s%s%s%s%s)",
 		  type, i, codec_info[i].pt,
 		  (int)codec_info[i].encoding_name.slen,
 		  codec_info[i].encoding_name.ptr,
 		  codec_info[i].clock_rate/1000,
 		  codec_info[i].channel_cnt,
-		  good_number(bps, param.info.avg_bps),
+		  good_number(bps, param.info.avg_bps), 
 		  param.info.frm_ptime * param.setting.frm_per_pkt,
 		  (param.setting.vad ? " vad" : ""),
 		  (param.setting.cng ? " cng" : ""),

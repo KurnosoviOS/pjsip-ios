@@ -2,7 +2,7 @@
 
 F="configure-macos"
 
-echo "---configure-macos started"
+echo "----configure-macos started"
 
 if test "$*" = "--help" -o "$*" = "-h"; then
   echo "$F [OPTIONS]"

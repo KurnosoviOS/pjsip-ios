@@ -166,7 +166,7 @@
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>path</key>
-			<string>libPods-pjsip-ios.a</string>
+			<string>libPods-pjsip-macos.a</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
@@ -567,7 +567,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.h</string>
 			<key>path</key>
-			<string>Pods-pjsip-ios-prefix.pch</string>
+			<string>Pods-pjsip-macos-prefix.pch</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -754,7 +754,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Pods-pjsip-ios-Private.xcconfig</string>
+			<string>Pods-pjsip-macos-Private.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -917,9 +917,9 @@
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>pjsip-ios</string>
+			<string>pjsip-macos</string>
 			<key>path</key>
-			<string>pjsip-ios</string>
+			<string>pjsip-macos</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1103,7 +1103,7 @@
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-pjsip-ios/Pods-pjsip-ios-prefix.pch</string>
+				<string>Target Support Files/Pods-pjsip-macos/Pods-pjsip-macos-prefix.pch</string>
 				<key>INSTALL_PATH</key>
 				<string>$(BUILT_PRODUCTS_DIR)</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
@@ -1315,7 +1315,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>Pods-pjsip-ios.xcconfig</string>
+			<string>Pods-pjsip-macos.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1998,7 +1998,7 @@
 				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
 				<string>YES</string>
 				<key>GCC_PREFIX_HEADER</key>
-				<string>Target Support Files/Pods-pjsip-ios/Pods-pjsip-ios-prefix.pch</string>
+				<string>Target Support Files/Pods-pjsip-macos/Pods-pjsip-macos-prefix.pch</string>
 				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
 				<array>
 					<string>DEBUG=1</string>
@@ -2138,7 +2138,7 @@
 			<key>name</key>
 			<string>Support Files</string>
 			<key>path</key>
-			<string>../Target Support Files/Pods-pjsip-ios</string>
+			<string>../Target Support Files/Pods-pjsip-macos</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2283,9 +2283,9 @@
 			<key>isa</key>
 			<string>PBXNativeTarget</string>
 			<key>name</key>
-			<string>Pods-pjsip-ios</string>
+			<string>Pods-pjsip-macos</string>
 			<key>productName</key>
-			<string>Pods-pjsip-ios</string>
+			<string>Pods-pjsip-macos</string>
 			<key>productReference</key>
 			<string>133403381547FC44BDD0C6A8</string>
 			<key>productType</key>
@@ -2827,7 +2827,7 @@
 			<key>lastKnownFileType</key>
 			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>Pods-pjsip-ios-dummy.m</string>
+			<string>Pods-pjsip-macos-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -3440,7 +3440,7 @@
 			<key>remoteGlobalIDString</key>
 			<string>96871B0DA11480FD792DB022</string>
 			<key>remoteInfo</key>
-			<string>Pods-pjsip-ios</string>
+			<string>Pods-pjsip-macos</string>
 		</dict>
 		<key>FE5DF45B21018120E2E1BC60</key>
 		<dict>

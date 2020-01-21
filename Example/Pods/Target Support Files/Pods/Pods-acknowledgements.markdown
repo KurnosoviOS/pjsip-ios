@@ -132,7 +132,7 @@ This application makes use of the following third party libraries:
 
 
 
-## pjsip-ios
+## pjsip-macos
 
 GNU GENERAL PUBLIC LICENSE
                        Version 2, June 1991
