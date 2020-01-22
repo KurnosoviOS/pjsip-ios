@@ -386,12 +386,6 @@ output/libsrtp-x86_64-apple-darwin/aes_icm_ossl.o: ../../srtp/crypto/cipher/aes_
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_time_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_timespec.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/bn.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h \
   ../../srtp/crypto/include/aes_icm_ossl.h \
   ../../srtp/crypto/include/cipher.h ../../srtp/include/srtp.h \
   ../../srtp/crypto/include/crypto_types.h \
@@ -551,12 +545,6 @@ output/libsrtp-x86_64-apple-darwin/aes_gcm_ossl.o: ../../srtp/crypto/cipher/aes_
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_time_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_timespec.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/bn.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h \
   ../../srtp/crypto/include/aes_icm_ossl.h \
   ../../srtp/crypto/include/cipher.h ../../srtp/include/srtp.h \
   ../../srtp/crypto/include/crypto_types.h \
@@ -1055,12 +1043,6 @@ output/libsrtp-x86_64-apple-darwin/hmac_ossl.o: ../../srtp/crypto/hash/hmac_ossl
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/obj_mac.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/asn1.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/bn.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/hmac.h
 output/libsrtp-x86_64-apple-darwin/datatypes.o: ../../srtp/crypto/math/datatypes.c config.h srtp_config.h \
   ../../../pjlib/include/pj/types.h ../../../pjlib/include/pj/config.h \
@@ -2388,13 +2370,13 @@ output/libsrtp-x86_64-apple-darwin/srtp.o: ../../srtp/srtp/srtp.c config.h srtp_
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/obj_mac.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/asn1.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/bn.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/aes.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h \
-  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/aes.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h
 output/libsrtp-x86_64-apple-darwin/ekt.o: ../../srtp/srtp/ekt.c ../../srtp/include/srtp_priv.h config.h \
   srtp_config.h ../../../pjlib/include/pj/types.h \
   ../../../pjlib/include/pj/config.h \

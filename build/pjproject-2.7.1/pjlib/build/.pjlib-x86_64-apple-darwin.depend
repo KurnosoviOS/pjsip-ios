@@ -5280,12 +5280,6 @@ output/pjlib-x86_64-apple-darwin/ssl_sock_ossl.o: ../src/pj/ssl_sock_ossl.c ../i
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/ossl_typ.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/symhacks.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/bn.h \
-  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/machine/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/syslimits.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/ssl.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/comp.h \
   /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/include/openssl/x509.h \

@@ -29,19 +29,23 @@ fi
 OPENSSL_VERSION="openssl-1.0.1m"
 DEVELOPER=`xcode-select -print-path`
 
+TMP_DIR="$(pwd)/../tmp"
+
 buildMac()
 {
 	ARCH=$1
+	TARGET="darwin64-x86_64-cc"
 
 	echo "Building ${OPENSSL_VERSION} for ${ARCH}"
+	echo "Target: ${TARGET}"
 
 	pushd . > /dev/null
 	cd "${OPENSSL_VERSION}"
-	./Configure ${TARGET} --openssldir="/tmp/${OPENSSL_VERSION}-${ARCH}" &> "../${OPENSSL_VERSION}-${ARCH}.log"
+	./Configure ${TARGET} --openssldir="${TMP_DIR}/${OPENSSL_VERSION}-${ARCH}" &> "../${OPENSSL_VERSION}-${ARCH}.log"
 	echo "buildMac->Configure completed for ${ARCH}"
 	make >> "../${OPENSSL_VERSION}-${ARCH}.log" 2>&1
 	echo "buildMac->make completed for ${ARCH}"
-	make install >> "../${OPENSSL_VERSION}-${ARCH}.log" 2>&1
+	make install_sw >> "../${OPENSSL_VERSION}-${ARCH}.log" 2>&1
 	echo "buildMac->make install completed for ${ARCH}"
 	make clean >> "../${OPENSSL_VERSION}-${ARCH}.log" 2>&1
 	echo "buildMac->make clean completed for ${ARCH}"
@@ -76,16 +80,16 @@ buildIOS()
 	echo "Building ${OPENSSL_VERSION} for ${PLATFORM} ${SDK_VERSION} ${ARCH}"
 
 	if [[ "${ARCH}" == "x86_64" && "${PLATFORM}" == "iPhoneSimulator" ]]; then
-		./Configure darwin64-x86_64-cc --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+		./Configure darwin64-x86_64-cc --openssldir="${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}" &> "${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 	else
-		./Configure iphoneos-cross --openssldir="/tmp/${OPENSSL_VERSION}-iOS-${ARCH}" &> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log"
+		./Configure iphoneos-cross --openssldir="${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}" &> "${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}.log"
 	fi
 	# add -isysroot to CC=
 	sed -ie "s!^CFLAG=!CFLAG=-isysroot ${CROSS_TOP}/SDKs/${CROSS_SDK} -miphoneos-version-min=${SDK_VERSION} !" "Makefile"
 
-	make >> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
-	make install >> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
-	make clean >> "/tmp/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
+	make >> "${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
+	make install_sw >> "${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
+	make clean >> "${TMP_DIR}/${OPENSSL_VERSION}-iOS-${ARCH}.log" 2>&1
 	popd > /dev/null
 }
 
@@ -95,8 +99,8 @@ rm -rf include/openssl/* lib/*
 mkdir -p lib
 mkdir -p include/openssl/
 
-rm -rf "/tmp/${OPENSSL_VERSION}-*"
-rm -rf "/tmp/${OPENSSL_VERSION}-*.log"
+rm -rf "${TMP_DIR}/${OPENSSL_VERSION}-*"
+rm -rf "${TMP_DIR}/${OPENSSL_VERSION}-*.log"
 
 rm -rf "${OPENSSL_VERSION}"
 
@@ -115,14 +119,14 @@ buildMac "x86_64"
 #buildIOS "macos64"
 
 echo "Copying headers"
-cp /tmp/${OPENSSL_VERSION}-x86_64/include/openssl/* include/openssl/
+cp ${TMP_DIR}/${OPENSSL_VERSION}-x86_64/include/openssl/* include/openssl/
 
 echo "Building Mac libraries"
-cp "/tmp/${OPENSSL_VERSION}-x86_64/lib/libcrypto.a" lib/libcrypto.a
-cp "/tmp/${OPENSSL_VERSION}-x86_64/lib/libssl.a" lib/libssl.a
+cp "${TMP_DIR}/${OPENSSL_VERSION}-x86_64/lib/libcrypto.a" lib/libcrypto.a
+cp "${TMP_DIR}/${OPENSSL_VERSION}-x86_64/lib/libssl.a" lib/libssl.a
 
 echo "Cleaning up"
-rm -rf /tmp/${OPENSSL_VERSION}-*
+rm -rf ${TMP_DIR}/${OPENSSL_VERSION}-*
 rm -rf ${OPENSSL_VERSION}
 
 echo "Done"

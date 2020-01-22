@@ -99,7 +99,11 @@ copy_libs () {
 }
 
 copy_mac_libs () {
+  if [ ! -d lib ]; then
+      mkdir lib/
+  fi
   DST=${1}
+  echo "copy_mac_libs before copying"
   cp pjlib/lib-${DST}/libpj-${DST}-apple-darwin.a lib/libpj-${DST}-apple-darwin.a
   cp pjlib-util/lib-${DST}/libpjlib-util-${DST}-apple-darwin.a lib/libpjlib-util-${DST}-apple-darwin.a
   cp pjmedia/lib-${DST}/libpjmedia-${DST}-apple-darwin.a lib/libpjmedia-${DST}-apple-darwin.a
@@ -121,6 +125,7 @@ copy_mac_libs () {
   cp third_party/lib-${DST}/libsrtp-${DST}-apple-darwin.a lib/libsrtp-${DST}-apple-darwin.a
   cp third_party/lib-${DST}/libyuv-${DST}-apple-darwin.a lib/libyuv-${DST}-apple-darwin.a
   cp third_party/lib-${DST}/libwebrtc-${DST}-apple-darwin.a lib/libwebrtc-${DST}-apple-darwin.a
+  echo "copy_mac_libs after copying"
 }
 
 lipo_libs () {
@@ -235,19 +240,22 @@ xcrun -sdk iphoneos lipo -arch armv7  ${OPENH264_DIR}/armv7/lib/libopenh264.a \
                          -create -output lib/libopenh264.a
 }
 
-if [ ! -f ${OPENSSL_SH} ]; then
-    echo "Downloading openssl..."
-    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_TARGETS_URL") ${LOOP_TARGETS_URL}
-    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_ARCHS_URL") ${LOOP_ARCHS_URL}
-    curl --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
-fi
+#if [ ! -f ${OPENSSL_SH} ]; then
+#    echo "Downloading openssl..."
+#    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_TARGETS_URL") ${LOOP_TARGETS_URL}
+#    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_ARCHS_URL") ${LOOP_ARCHS_URL}
+#    curl --create-dirs -o ${OPENSSL_SH} ${OPENSSL_URL}
+#fi
 
 if [ ! -f "${OPENSSL_DIR}/lib/libssl.a" ]; then
     pushd . > /dev/null
+    cd ${BUILD_DIR}
+    mkdir ${OPENSSL_DIR}
+    cp -R ../openssl/openssl-build.sh ${OPENSSL_DIR}
     cd ${OPENSSL_DIR}
-    /bin/sh ${OPENSSL_SH} --archs="MacOSX_x86_64" # lock targets      # --version="1.0.2k"
-    mkdir "${OPENSSL_DIR}/include/openssl"
-    mv ${OPENSSL_DIR}/include/*.h ${OPENSSL_DIR}/include/openssl
+    /bin/sh openssl-build.sh
+    #mkdir "${OPENSSL_DIR}/include/openssl"
+    #mv ${OPENSSL_DIR}/include/*.h ${OPENSSL_DIR}/include/openssl
     popd > /dev/null
 fi
 
@@ -300,7 +308,6 @@ function _build() {
   echo "Building for ${ARCH}..."
   pwd
 
-  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
   make distclean > ${LOG} 2>&1
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
   ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
@@ -339,16 +346,29 @@ macos_64
 
 copy_mac_libs "x86_64"
 
+echo "FOLDER_PJSIP: ${FOLDER_PJSIP}"
+pwd
+
+INCLUDE_FOLDER="../../Pod/$FOLDER_PJSIP/"
+if [ ! -f "${INCLUDE_FOLDER}" ]; then
+    mkdir ${INCLUDE_FOLDER}
+fi
+
 #cp -R ${OPENH264_DIR}/arm64/include/wels/* ../../Pod/$FOLDER_PJSIP/openh264/wels
-cp -R pjlib/include/* ../../Pod/$FOLDER_PJSIP/
-cp -R pjlib-util/include/* ../../Pod/$FOLDER_PJSIP/
-cp -R pjmedia/include/* ../../Pod/$FOLDER_PJSIP/
-cp -R pjnath/include/* ../../Pod/$FOLDER_PJSIP/
-cp -R pjsip/include/* ../../Pod/$FOLDER_PJSIP/
+cp -R pjlib/include/* $INCLUDE_FOLDER
+cp -R pjlib-util/include/* $INCLUDE_FOLDER
+cp -R pjmedia/include/* $INCLUDE_FOLDER
+cp -R pjnath/include/* $INCLUDE_FOLDER
+cp -R pjsip/include/* $INCLUDE_FOLDER
 
 
-cp lib/* ../../Pod/pjsip-lib/
-cp ../openssl/lib/* ../../Pod/pjsip-lib/
+LIB_FOLDER="../../Pod/pjsip-lib/"
+if [ ! -f "${LIB_FOLDER}" ]; then
+    mkdir ${LIB_FOLDER}
+fi
+
+cp lib/* $LIB_FOLDER
+cp ../openssl/lib/* $LIB_FOLDER
 
 
 echo "Done"
