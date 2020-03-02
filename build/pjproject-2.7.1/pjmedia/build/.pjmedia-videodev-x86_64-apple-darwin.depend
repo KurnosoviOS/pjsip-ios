@@ -1021,4 +1021,22 @@ output/pjmedia-videodev-x86_64-apple-darwin/util.o: ../src/pjmedia-videodev/util
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/assert.h \
   ../../pjlib/include/pj/errno.h ../../pjlib/include/pj/compat/errno.h \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include/stdarg.h \
-  ../../pjlib/include/pj/log.h
+  ../../pjlib/include/pj/log.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/basic_types.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/compare.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/convert.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/rotate.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/convert_argb.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/convert_from.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/planar_functions.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/convert_from_argb.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/cpu_id.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/mjpeg_decoder.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/rotate_argb.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/row.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/scale.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/scale_argb.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/scale_row.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/version.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1/third_party/yuv/include/libyuv/video_common.h

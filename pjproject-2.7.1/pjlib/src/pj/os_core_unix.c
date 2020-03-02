@@ -62,7 +62,7 @@ JavaVM *pj_jni_jvm = NULL;
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved)
 {
     pj_jni_jvm = vm;
-    
+
     return JNI_VERSION_1_4;
 }
 #endif
@@ -1574,11 +1574,14 @@ PJ_DEF(pj_status_t) pj_sem_create( pj_pool_t *pool,
 	    sem_name[MAX_SEM_NAME_LEN] = '\0';
 	}
 
+  PJ_LOG(4,(THIS_FILE, "<--test-->pj_sem_create before sem_open: %s", sem_name));
 	/* Create semaphore */
 	sem->sem = sem_open(sem_name, O_CREAT|O_EXCL, S_IRUSR|S_IWUSR,
 			    initial);
-	if (sem->sem == SEM_FAILED)
-	    return PJ_RETURN_OS_ERROR(pj_get_native_os_error());
+	if (sem->sem == SEM_FAILED) {
+      PJ_LOG(4,(THIS_FILE, "<--test-->pj_sem_create sem_open failed: %s", sem_name));
+  	  return PJ_RETURN_OS_ERROR(pj_get_native_os_error());
+  }
 
 	/* And immediately release the name as we don't need it */
 	sem_unlink(sem_name);

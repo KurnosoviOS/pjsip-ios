@@ -1,5 +1,5 @@
 /* $Id: event.c 3905 2011-12-09 05:15:39Z ming $ */
-/* 
+/*
  * Copyright (C) 2011-2011 Teluu Inc. (http://www.teluu.com)
  *
  * This program is free software; you can redistribute it and/or modify
@@ -14,7 +14,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 #include <pjmedia/event.h>
 #include <pjmedia/errno.h>
@@ -99,14 +99,14 @@ static pj_status_t event_mgr_distribute_events(pjmedia_event_mgr *mgr,
     while (sub != &mgr->esub_list) {
         *next_sub = sub->next;
 
-        /* Check if the subscriber is interested in 
+        /* Check if the subscriber is interested in
          * receiving the event from the publisher.
          */
         if (sub->epub == ev->epub || !sub->epub) {
             pjmedia_event_cb *cb = sub->cb;
             void *user_data = sub->user_data;
             pj_status_t status;
-            
+
             if (rls_lock)
                 pj_mutex_unlock(mgr->mutex);
 
@@ -152,6 +152,7 @@ PJ_DEF(pj_status_t) pjmedia_event_mgr_create(pj_pool_t *pool,
                                              unsigned options,
 				             pjmedia_event_mgr **p_mgr)
 {
+    PJ_LOG(4, (THIS_FILE, "<--test--> pjmedia_event_mgr_create invoked"));
     pjmedia_event_mgr *mgr;
     pj_status_t status;
 
@@ -163,13 +164,16 @@ PJ_DEF(pj_status_t) pjmedia_event_mgr_create(pj_pool_t *pool,
     if (!(options & PJMEDIA_EVENT_MGR_NO_THREAD)) {
         status = pj_sem_create(mgr->pool, "ev_sem", 0, MAX_EVENTS + 1,
                                &mgr->sem);
-        if (status != PJ_SUCCESS)
-            return status;
+        if (status != PJ_SUCCESS) {
+              PJ_LOG(4, (THIS_FILE, "<--test--> pjmedia_event_mgr_create failed (pj_sem_create failed)"));
+              return status;
+        }
 
         status = pj_thread_create(mgr->pool, "ev_thread",
                                   &event_worker_thread,
                                   mgr, 0, 0, &mgr->thread);
         if (status != PJ_SUCCESS) {
+            PJ_LOG(4, (THIS_FILE, "<--test--> pjmedia_event_mgr_create pjmedia_event_mgr_destroy (pj_thread_create failed)"));
             pjmedia_event_mgr_destroy(mgr);
             return status;
         }
@@ -177,6 +181,7 @@ PJ_DEF(pj_status_t) pjmedia_event_mgr_create(pj_pool_t *pool,
 
     status = pj_mutex_create_recursive(mgr->pool, "ev_mutex", &mgr->mutex);
     if (status != PJ_SUCCESS) {
+        PJ_LOG(4, (THIS_FILE, "<--test--> pjmedia_event_mgr_create pjmedia_event_mgr_destroy (pj_mutex_create_recursive failed)"));
         pjmedia_event_mgr_destroy(mgr);
         return status;
     }
@@ -186,6 +191,8 @@ PJ_DEF(pj_status_t) pjmedia_event_mgr_create(pj_pool_t *pool,
 
     if (p_mgr)
 	*p_mgr = mgr;
+
+    PJ_LOG(4, (THIS_FILE, "<--test--> pjmedia_event_mgr_create success)"));
 
     return PJ_SUCCESS;
 }

@@ -1,0 +1,31 @@
+build.mak:2: /Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak: No such file or directory
+make: *** No rule to make target `/Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak'.  Stop.
+---configure-macos started
+configure-macos: DEVPATH is not specified, using /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer
+configure-macos: IPHONESDK is not specified, choosing MacOSX10.15.sdk
+configure: SDKPATH: /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+configure-macos: CC is not specified, choosing /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+configure-macos: MIN_IOS is not specified, choosing 13.0
+configure-macos: CXX is not specified, using /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+configure-macos: calling ./aconfigure with env vars:
+ MIN_IOS = -miphoneos-version-min=13.0
+ CC = /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+ CXX = /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+ SDKPATH = /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+ CFLAGS = -I/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/include -O2  -miphoneos-version-min=13.0 -DPJ_SDK_NAME="\"MacOSX10.15.sdk\"" -arch arm64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -iframework /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks
+ LDFLAGS = -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/openssl/lib -O2  -miphoneos-version-min=13.0 -arch arm64 -target x86_64-apple-ios13.0-macabi -isysroot /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -iframework /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks -framework AudioToolbox -framework Foundation -framework UIKit
+ AR = /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -o
+ RANLIB = echo ranlib
+ ARCH = arm64 -target x86_64-apple-ios13.0-macabi
+checking build system type... x86_64-apple-darwin19.0.0
+checking host system type... x86_64-apple-darwin
+checking target system type... x86_64-apple-darwin
+checking for x86_64-apple-darwin-gcc... /Applications/XCode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/../../../Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+checking whether the C compiler works... no
+aconfigure: error: in `/Users/eastwindkurnosov/Documents/GitHub/pjsip-ios/build/pjproject-2.7.1':
+aconfigure: error: C compiler cannot create executables
+See `config.log' for more details
+build.mak:2: /Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak: No such file or directory
+make: *** No rule to make target `/Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak'.  Stop.
+build.mak:2: /Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak: No such file or directory
+make: *** No rule to make target `/Users/eastwind/Documents/pjsip-ios/build/pjproject-2.7.1/version.mak'.  Stop.
