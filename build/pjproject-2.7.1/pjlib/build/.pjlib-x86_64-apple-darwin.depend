@@ -2039,7 +2039,15 @@ output/pjlib-x86_64-apple-darwin/os_core_darwin.o: ../src/pj/os_core_darwin.m ..
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSPressureConfiguration.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSButtonTouchBarItem.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSPickerTouchBarItem.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSStepperTouchBarItem.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSStepperTouchBarItem.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/semaphore.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include/sys/semaphore.h \
+  ../include/pj/assert.h ../include/pj/compat/assert.h \
+  ../include/pj/pool.h ../include/pj/list.h ../include/pj/log.h \
+  ../include/pj/rand.h ../include/pj/string.h \
+  ../include/pj/compat/string.h ../include/pj/guid.h \
+  ../include/pj/except.h ../include/pj/compat/setjmp.h \
+  ../include/pj/errno.h ../include/pj/compat/errno.h
 output/pjlib-x86_64-apple-darwin/sock_qos_darwin.o: ../src/pj/sock_qos_darwin.c ../include/pj/sock_qos.h \
   ../include/pj/sock.h ../include/pj/types.h ../include/pj/config.h \
   ../include/pj/compat/cc_gcc.h ../include/pj/compat/os_auto.h \

@@ -56,8 +56,8 @@ export UTIL_TEST_CXXFLAGS += $(_CXXFLAGS)
 export UTIL_TEST_LDFLAGS += $(PJLIB_UTIL_LDLIB) $(PJLIB_LDLIB) $(_LDFLAGS)
 export UTIL_TEST_EXE:=pjlib-util-test-$(TARGET_NAME)$(HOST_EXE)
 
-	
-export CC_OUT CC AR RANLIB HOST_MV HOST_RM HOST_RMDIR HOST_MKDIR OBJEXT LD LDOUT 
+
+export CC_OUT CC AR RANLIB HOST_MV HOST_RM HOST_RMDIR HOST_MKDIR OBJEXT LD LDOUT
 ###############################################################################
 # Main entry
 TARGETS := $(PJLIB_UTIL_LIB) $(PJLIB_UTIL_SONAME)
@@ -72,7 +72,7 @@ doc:
 	@if [ -n "$(WWWDIR)" ] && ! [ -d "$(WWWDIR)/docs/$(PJ_VERSION)/pjlib-util/docs/html" ] ; then \
 		echo "Creating docs/$(PJ_VERSION)/pjlib-util/docs/html" ; \
 		mkdir -p $(WWWDIR)/docs/$(PJ_VERSION)/pjlib-util/docs/html ; \
-	fi 
+	fi
 	@if [ -n "$(WWWDIR)" ] && [ -d "$(WWWDIR)/docs/$(PJ_VERSION)/pjlib-util/docs/html" ] ; then \
 		echo "Copying docs/$(PJ_VERSION) to $(WWWDIR)/docs/$(PJ_VERSION)/pjlib-util/docs/html.." ; \
 		cp -v -a ../docs/$(PJ_VERSION)/html/* $(WWWDIR)/docs/$(PJ_VERSION)/pjlib-util/docs/html/ ; \
@@ -118,4 +118,3 @@ depend:
 	$(MAKE) -f $(RULES_MAK) APP=PJLIB_UTIL app=pjlib-util $@
 	$(MAKE) -f $(RULES_MAK) APP=UTIL_TEST app=pjlib-util-test $@
 	echo '$(BINDIR)/$(UTIL_TEST_EXE): $(LIBDIR)/$(PJLIB_UTIL_LIB) $(PJLIB_LIB)' >> .pjlib-util-test-$(TARGET_NAME).depend; \
-

@@ -62,7 +62,7 @@ JavaVM *pj_jni_jvm = NULL;
 JNIEXPORT jint JNI_OnLoad(JavaVM *vm, void *reserved)
 {
     pj_jni_jvm = vm;
-    
+
     return JNI_VERSION_1_4;
 }
 #endif
@@ -1532,7 +1532,7 @@ PJ_DEF(pj_status_t) pj_rwmutex_destroy(pj_rwmutex_t *mutex)
 
 
 ///////////////////////////////////////////////////////////////////////////////
-#if defined(PJ_HAS_SEMAPHORE) && PJ_HAS_SEMAPHORE != 0
+#if defined(PJ_HAS_SEMAPHORE) && PJ_HAS_SEMAPHORE != 0 && !(defined(PJ_DARWINOS) && PJ_DARWINOS!=0)
 
 /*
  * pj_sem_create()
@@ -1575,6 +1575,7 @@ PJ_DEF(pj_status_t) pj_sem_create( pj_pool_t *pool,
 	}
 
 	/* Create semaphore */
+  PJ_LOG(4,(THIS_FILE, "<--test-->sem_open %s; initial:%d", sem_name, initial));
 	sem->sem = sem_open(sem_name, O_CREAT|O_EXCL, S_IRUSR|S_IWUSR,
 			    initial);
 	if (sem->sem == SEM_FAILED)
