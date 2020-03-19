@@ -1,0 +1,7 @@
+build/SDL_render_gles.lo: \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/src/render/opengles/SDL_render_gles.c \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/src/render/opengles/../../SDL_internal.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/src/render/opengles/../../dynapi/SDL_dynapi.h \
+  /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/src/render/opengles/../../dynapi/SDL_dynapi_overrides.h \
+  include/SDL_config.h include/SDL_platform.h include/begin_code.h \
+  include/close_code.h

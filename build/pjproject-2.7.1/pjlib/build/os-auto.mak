@@ -24,7 +24,7 @@ export TEST_OBJS +=	main.o
 # Additional LDFLAGS for pjlib-test
 #
 # Disabled, as this causes duplicated LDFLAGS, which may raise linking errors
-#export TEST_LDFLAGS += -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/lib -O2  -mmacosx-version-min=10.15 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/lib -lssl -lcrypto -lm -lpthread  -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -framework Foundation -framework AppKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox
+#export TEST_LDFLAGS += -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib -mmacosx-version-min=10.15 -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -framework AudioToolbox -framework Foundation -L/Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/openssl/lib -lssl -lcrypto -lm -lpthread  -framework CoreAudio -framework CoreServices -framework AudioUnit -framework AudioToolbox -framework Foundation -framework AppKit -framework AVFoundation -framework CoreGraphics -framework QuartzCore -framework CoreVideo -framework CoreMedia -framework VideoToolbox -framework OpenGL
 
 #
 # TARGETS are make targets in the Makefile, to be executed for this given

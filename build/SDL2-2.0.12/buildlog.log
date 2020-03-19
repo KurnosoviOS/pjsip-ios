@@ -1,0 +1,516 @@
+Generating build information using autoconf
+This may take a while ...
+Couldn't find autoconf, aborting
+checking build system type... x86_64-apple-darwin19.3.0
+checking host system type... x86_64-apple-darwin19.3.0
+checking how to print strings... printf
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 196608
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-apple-darwin19.3.0 file names to x86_64-apple-darwin19.3.0 format... func_convert_file_noop
+checking how to convert x86_64-apple-darwin19.3.0 file names to toolchain format... func_convert_file_noop
+checking for /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... no
+checking for mawk... no
+checking for nawk... no
+checking for awk... awk
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dsymutil... dsymutil
+checking for nmedit... nmedit
+checking for lipo... lipo
+checking for otool... otool
+checking for otool64... no
+checking for -single_module linker flag... yes
+checking for -exported_symbols_list linker flag... yes
+checking for -force_load linker flag... yes
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... yes
+checking for gcc option to produce PIC... -fno-common -DPIC
+checking if gcc PIC flag -fno-common -DPIC works... yes
+checking if gcc static flag -static works... no
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin19.3.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
+checking if the linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) is GNU ld... no
+checking whether the g++ linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fno-common -DPIC
+checking if g++ PIC flag -fno-common -DPIC works... yes
+checking if g++ static flag -static works... no
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... darwin19.3.0 dyld
+checking how to hardcode library paths into programs... immediate
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether make sets $(MAKE)... yes
+checking for windres... no
+checking for pkg-config... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for working volatile... yes
+checking for GCC -MMD -MT option... yes
+checking for linker option --no-undefined... no
+checking for linker option --dynamicbase... no
+checking for linker option --nxcompat... no
+checking for linker option --high-entropy-va... no
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking malloc.h usability... no
+checking malloc.h presence... no
+checking for malloc.h... no
+checking for memory.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking float.h usability... yes
+checking float.h presence... yes
+checking for float.h... yes
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for size_t... yes
+checking for M_PI in math.h... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for working memcmp... yes
+checking for working strtod... yes
+checking for mprotect... yes
+checking for malloc... yes
+checking for calloc... yes
+checking for realloc... yes
+checking for free... yes
+checking for getenv... yes
+checking for setenv... yes
+checking for putenv... yes
+checking for unsetenv... yes
+checking for qsort... yes
+checking for abs... yes
+checking for bcopy... yes
+checking for memset... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for wcslen... yes
+checking for wcslcpy... yes
+checking for wcslcat... yes
+checking for wcsdup... yes
+checking for wcsstr... yes
+checking for wcscmp... yes
+checking for wcsncmp... yes
+checking for strlen... yes
+checking for strlcpy... yes
+checking for strlcat... yes
+checking for _strrev... no
+checking for _strupr... no
+checking for _strlwr... no
+checking for strchr... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strtok_r... yes
+checking for itoa... no
+checking for _ltoa... no
+checking for _uitoa... no
+checking for _ultoa... no
+checking for strtol... yes
+checking for strtoul... yes
+checking for _i64toa... no
+checking for _ui64toa... no
+checking for strtoll... yes
+checking for strtoull... yes
+checking for atoi... yes
+checking for atof... yes
+checking for strcmp... yes
+checking for strncmp... yes
+checking for _stricmp... no
+checking for strcasecmp... yes
+checking for _strnicmp... no
+checking for strncasecmp... yes
+checking for vsscanf... yes
+checking for vsnprintf... yes
+checking for fopen64... no
+checking for fseeko... yes
+checking for fseeko64... no
+checking for sigaction... yes
+checking for setjmp... yes
+checking for nanosleep... yes
+checking for sysconf... yes
+checking for sysctlbyname... yes
+checking for getauxval... no
+checking for poll... yes
+checking for _Exit... yes
+checking for pow in -lm... yes
+checking for acos... yes
+checking for acosf... yes
+checking for asin... yes
+checking for asinf... yes
+checking for atan... yes
+checking for atanf... yes
+checking for atan2... yes
+checking for atan2f... yes
+checking for ceil... yes
+checking for ceilf... yes
+checking for copysign... yes
+checking for copysignf... yes
+checking for cos... yes
+checking for cosf... yes
+checking for exp... yes
+checking for expf... yes
+checking for fabs... yes
+checking for fabsf... yes
+checking for floor... yes
+checking for floorf... yes
+checking for fmod... yes
+checking for fmodf... yes
+checking for log... yes
+checking for logf... yes
+checking for log10... yes
+checking for log10f... yes
+checking for pow... yes
+checking for powf... yes
+checking for scalbn... yes
+checking for scalbnf... yes
+checking for sin... yes
+checking for sinf... yes
+checking for sqrt... yes
+checking for sqrtf... yes
+checking for tan... yes
+checking for tanf... yes
+checking for iconv_open in -liconv... yes
+checking for iconv... yes
+checking for struct sigaction.sa_sigaction... yes
+checking libunwind.h usability... yes
+checking libunwind.h presence... yes
+checking for libunwind.h... yes
+checking for GCC builtin atomic operations... yes
+checking for GCC -mmmx option... yes
+checking for GCC -m3dnow option... yes
+checking for GCC -msse option... yes
+checking for GCC -msse2 option... yes
+checking for GCC -msse3 option... yes
+checking immintrin.h usability... yes
+checking immintrin.h presence... yes
+checking for immintrin.h... yes
+checking for Altivec with GCC altivec.h and -maltivec option... no
+checking for Altivec with GCC -maltivec option... no
+checking for Altivec with GCC altivec.h and -faltivec option... no
+checking for Altivec with GCC -faltivec option... no
+checking for GCC -Wall option... yes
+checking for necessary GCC -Wno-multichar option... no
+checking for GCC -fno-strict-aliasing option... yes
+checking for GCC -fvisibility=hidden option... yes
+checking for GCC -Wdeclaration-after-statement option... yes
+checking for dlopen... yes
+checking for dlopen in -lc... yes
+checking for Cocoa framework... yes
+checking for Metal framework... yes
+checking for X... no
+checking for OpenGL (GLX) support... no
+checking for pthreads... yes
+checking for recursive mutexes... yes
+checking for pthread semaphores... yes
+checking for sem_timedwait... no
+checking for pthread_np.h... no
+checking for pthread_setname_np... yes
+checking for pthread_set_name_np... no
+checking whether to install sdl2-config... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating sdl2-config
+config.status: creating sdl2-config.cmake
+config.status: creating sdl2-config-version.cmake
+config.status: creating SDL2.spec
+config.status: creating sdl2.pc
+config.status: creating include/SDL_config.h
+config.status: executing libtool commands
+config.status: executing sdl2_config commands
+config.status: executing summary commands
+-en SDL2 Configure Summary:
+Building Static Libraries
+Enabled modules : atomic audio video render events joystick haptic sensor power filesystem threads timers file loadso cpuinfo assembly
+Assembly Math   : mmx 3dnow sse sse2 sse3
+Audio drivers   : disk dummy coreaudio
+Video drivers   : dummy cocoa metal opengl opengl_es2 vulkan
+Input drivers   :
+Using libsamplerate : NO
+Using libudev       : NO
+Using dbus          : NO
+Using ime           : NO
+Using ibus          : NO
+Using fcitx         : NO
+
+/bin/sh build-scripts/updaterev.sh
+/bin/sh build-scripts/mkinstalldirs build
+mkdir build
+touch build/.created
+  CC     build/SDL.lo
+  CC     build/SDL_assert.lo
+  CC     build/SDL_dataqueue.lo
+  CC     build/SDL_error.lo
+  CC     build/SDL_hints.lo
+  CC     build/SDL_log.lo
+  CC     build/SDL_atomic.lo
+  CC     build/SDL_spinlock.lo
+  CC     build/SDL_audio.lo
+  CC     build/SDL_audiocvt.lo
+  CC     build/SDL_audiodev.lo
+  CC     build/SDL_audiotypecvt.lo
+  CC     build/SDL_mixer.lo
+  CC     build/SDL_wave.lo
+  CC     build/SDL_cpuinfo.lo
+  CC     build/SDL_dynapi.lo
+  CC     build/SDL_clipboardevents.lo
+  CC     build/SDL_displayevents.lo
+  CC     build/SDL_dropevents.lo
+  CC     build/SDL_events.lo
+  CC     build/SDL_gesture.lo
+  CC     build/SDL_keyboard.lo
+  CC     build/SDL_mouse.lo
+  CC     build/SDL_quit.lo
+  CC     build/SDL_touch.lo
+  CC     build/SDL_windowevents.lo
+  CC     build/SDL_rwops.lo
+  CC     build/SDL_haptic.lo
+  CC     build/SDL_gamecontroller.lo
+  CC     build/SDL_joystick.lo
+  CC     build/e_atan2.lo
+  CC     build/e_exp.lo
+  CC     build/e_fmod.lo
+  CC     build/e_log.lo
+  CC     build/e_log10.lo
+  CC     build/e_pow.lo
+  CC     build/e_rem_pio2.lo
+  CC     build/e_sqrt.lo
+  CC     build/k_cos.lo
+  CC     build/k_rem_pio2.lo
+  CC     build/k_sin.lo
+  CC     build/k_tan.lo
+  CC     build/s_atan.lo
+  CC     build/s_copysign.lo
+  CC     build/s_cos.lo
+  CC     build/s_fabs.lo
+  CC     build/s_floor.lo
+  CC     build/s_scalbn.lo
+  CC     build/s_sin.lo
+  CC     build/s_tan.lo
+  CC     build/SDL_power.lo
+  CC     build/SDL_d3dmath.lo
+  CC     build/SDL_render.lo
+  CC     build/SDL_yuv_sw.lo
+  CC     build/SDL_render_d3d.lo
+  CC     build/SDL_shaders_d3d.lo
+  CC     build/SDL_render_d3d11.lo
+  CC     build/SDL_shaders_d3d11.lo
+  CC     build/SDL_render_gl.lo
+  CC     build/SDL_shaders_gl.lo
+  CC     build/SDL_render_gles.lo
+  CC     build/SDL_render_gles2.lo
+  CC     build/SDL_shaders_gles2.lo
+  CC     build/SDL_render_psp.lo
+  CC     build/SDL_blendfillrect.lo
+  CC     build/SDL_blendline.lo
+  CC     build/SDL_blendpoint.lo
+  CC     build/SDL_drawline.lo
+  CC     build/SDL_drawpoint.lo
+  CC     build/SDL_render_sw.lo
+  CC     build/SDL_rotate.lo
+  CC     build/SDL_sensor.lo
+  CC     build/SDL_getenv.lo
+  CC     build/SDL_iconv.lo
+  CC     build/SDL_malloc.lo
+  CC     build/SDL_qsort.lo
+  CC     build/SDL_stdlib.lo
+  CC     build/SDL_string.lo
+  CC     build/SDL_strtokr.lo
+  CC     build/SDL_thread.lo
+  CC     build/SDL_timer.lo
+  CC     build/SDL_RLEaccel.lo
+  CC     build/SDL_blit.lo
+  CC     build/SDL_blit_0.lo
+  CC     build/SDL_blit_1.lo
+  CC     build/SDL_blit_A.lo
+  CC     build/SDL_blit_N.lo
+  CC     build/SDL_blit_auto.lo
+  CC     build/SDL_blit_copy.lo
+  CC     build/SDL_blit_slow.lo
+  CC     build/SDL_bmp.lo
+  CC     build/SDL_clipboard.lo
+  CC     build/SDL_egl.lo
+  CC     build/SDL_fillrect.lo
+  CC     build/SDL_pixels.lo
+  CC     build/SDL_rect.lo
+  CC     build/SDL_shape.lo
+  CC     build/SDL_stretch.lo
+  CC     build/SDL_surface.lo
+  CC     build/SDL_video.lo
+  CC     build/SDL_vulkan_utils.lo
+  CC     build/SDL_yuv.lo
+  CC     build/yuv_rgb.lo
+  CC     build/SDL_nullevents.lo
+  CC     build/SDL_nullframebuffer.lo
+  CC     build/SDL_nullvideo.lo
+  CC     build/SDL_diskaudio.lo
+  CC     build/SDL_dummyaudio.lo
+  CC     build/SDL_sysloadso.lo
+  CC     build/SDL_cocoaclipboard.lo
+  CC     build/SDL_cocoaevents.lo
+  CC     build/SDL_cocoakeyboard.lo
+  CC     build/SDL_cocoamessagebox.lo
+  CC     build/SDL_cocoametalview.lo
+  CC     build/SDL_cocoamodes.lo
+  CC     build/SDL_cocoamouse.lo
+  CC     build/SDL_cocoamousetap.lo
+  CC     build/SDL_cocoaopengl.lo
+  CC     build/SDL_cocoaopengles.lo
+  CC     build/SDL_cocoashape.lo
+  CC     build/SDL_cocoavideo.lo
+  CC     build/SDL_cocoavulkan.lo
+  CC     build/SDL_cocoawindow.lo
+  CC     build/SDL_render_metal.lo
+  CC     build/SDL_systhread.lo
+  CC     build/SDL_syssem.lo
+  CC     build/SDL_sysmutex.lo
+  CC     build/SDL_syscond.lo
+  CC     build/SDL_systls.lo
+  CC     build/SDL_coreaudio.lo
+  CC     build/SDL_sysjoystick.lo
+  CC     build/SDL_syshaptic.lo
+  CC     build/SDL_syspower.lo
+  CC     build/SDL_sysfilesystem.lo
+  CC     build/SDL_systimer.lo
+  CC     build/SDL_rwopsbundlesupport.lo
+  CC     build/SDL_poll.lo
+  CC     build/SDL_dummysensor.lo
+  LTLINK build/libSDL2.la
+  CC     build/SDL_dummy_main.lo
+  LTLINK build/libSDL2main.la
+  CC     build/SDL_test_assert.lo
+  CC     build/SDL_test_common.lo
+  CC     build/SDL_test_compare.lo
+  CC     build/SDL_test_crc32.lo
+  CC     build/SDL_test_font.lo
+  CC     build/SDL_test_fuzzer.lo
+  CC     build/SDL_test_harness.lo
+  CC     build/SDL_test_imageBlit.lo
+  CC     build/SDL_test_imageBlitBlend.lo
+  CC     build/SDL_test_imageFace.lo
+  CC     build/SDL_test_imagePrimitives.lo
+  CC     build/SDL_test_imagePrimitivesBlend.lo
+  CC     build/SDL_test_log.lo
+  CC     build/SDL_test_md5.lo
+  CC     build/SDL_test_memory.lo
+  CC     build/SDL_test_random.lo
+  LTLINK build/libSDL2_test.la
+/bin/sh build-scripts/updaterev.sh
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/bin
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/bin
+/usr/bin/install -c -m 755 sdl2-config /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/bin/sdl2-config
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2
+for file in SDL.h SDL_assert.h SDL_atomic.h SDL_audio.h SDL_bits.h SDL_blendmode.h SDL_clipboard.h SDL_cpuinfo.h SDL_egl.h SDL_endian.h SDL_error.h SDL_events.h SDL_filesystem.h SDL_gamecontroller.h SDL_gesture.h SDL_haptic.h SDL_hints.h SDL_joystick.h SDL_keyboard.h SDL_keycode.h SDL_loadso.h SDL_log.h SDL_main.h SDL_messagebox.h SDL_metal.h SDL_mouse.h SDL_mutex.h SDL_name.h SDL_opengl.h SDL_opengl_glext.h SDL_opengles.h SDL_opengles2_gl2ext.h SDL_opengles2_gl2.h SDL_opengles2_gl2platform.h SDL_opengles2.h SDL_opengles2_khrplatform.h SDL_pixels.h SDL_platform.h SDL_power.h SDL_quit.h SDL_rect.h SDL_render.h SDL_rwops.h SDL_scancode.h SDL_sensor.h SDL_shape.h SDL_stdinc.h SDL_surface.h SDL_system.h SDL_syswm.h SDL_thread.h SDL_timer.h SDL_touch.h SDL_types.h SDL_version.h SDL_video.h SDL_vulkan.h begin_code.h close_code.h SDL_test.h SDL_test_assert.h SDL_test_common.h SDL_test_compare.h SDL_test_crc32.h SDL_test_font.h SDL_test_fuzzer.h SDL_test_harness.h SDL_test_images.h SDL_test_log.h SDL_test_md5.h SDL_test_memory.h SDL_test_random.h; do \
+	    /usr/bin/install -c -m 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/include/$file /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2/$file; \
+	done
+/usr/bin/install -c -m 644 include/SDL_config.h /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2/SDL_config.h
+if test -f include/SDL_revision.h; then \
+	    /usr/bin/install -c -m 644 include/SDL_revision.h /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2/SDL_revision.h; \
+	else \
+	    /usr/bin/install -c -m 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/include/SDL_revision.h /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/include/SDL2/SDL_revision.h; \
+	fi
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib
+/bin/sh ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2.la /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/libSDL2.la
+/bin/sh ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2main.la /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/libSDL2main.la
+/bin/sh ./libtool --quiet --mode=install /usr/bin/install -c build/libSDL2_test.la /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/libSDL2_test.la
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/share/aclocal
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/share
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/share/aclocal
+/usr/bin/install -c -m 644 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/SDL2-2.0.12/sdl2.m4 /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/share/aclocal/sdl2.m4
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/pkgconfig
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/pkgconfig
+/usr/bin/install -c -m 644 sdl2.pc /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/pkgconfig
+/bin/sh build-scripts/mkinstalldirs /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/cmake/SDL2
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/cmake
+mkdir /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/cmake/SDL2
+/usr/bin/install -c -m 644 sdl2-config.cmake /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/cmake/SDL2
+/usr/bin/install -c -m 644 sdl2-config-version.cmake /Users/eastwindkurnosov/Documents/GitHub/pjsip-macos/build/sdl-export/lib/cmake/SDL2

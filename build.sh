@@ -31,6 +31,10 @@ OPENSSL_SH=${OPENSSL_DIR}/`basename ${OPENSSL_DIR}`
 
 OPENH264_DIR=$(realpath "openh264")
 
+SDL_VER="SDL2-2.0.12"
+SDL_DIR=${BUILD_DIR}/${SDL_VER}
+SDL_EXPORT=${BUILD_DIR}/"sdl-export"
+
 copy_libs () {
     DST=${1}
 
@@ -240,6 +244,67 @@ xcrun -sdk iphoneos lipo -arch armv7  ${OPENH264_DIR}/armv7/lib/libopenh264.a \
                          -create -output lib/libopenh264.a
 }
 
+function CEC()
+{
+  if [ $1 -ne 0 ]; then
+    echo "Error code $RES returned! Terminating."
+    exit 1
+  fi
+}
+
+build_sdl () {
+  SDL_ARCHIVE="${SDL_VER}.tar.gz"
+
+  cd ${BUILD_DIR}
+
+  if [ ! -d ${SDL_VER} ]; then
+    if [ ! -f ${SDL_ARCHIVE} ]; then
+      echo "Downloading SDL..."
+      pwd
+
+      SDL_URL="https://www.libsdl.org/release/${SDL_ARCHIVE}"
+      echo "url: ${SDL_URL}"
+
+      curl -O ${SDL_URL}
+      #RES=$?; CEC $RES
+      tar xfz ${SDL_ARCHIVE}
+      #RES=$?; CEC $RES
+    fi
+
+    if [ -d ${SDL_VER} ]; then
+      echo "building ${SDL_VER}..."
+      pwd
+
+      cd ${SDL_VER}
+
+      if [ ! -f ${SDL_EXPORT} ]; then
+          mkdir ${SDL_EXPORT}
+      fi
+
+
+      #RES=$?; CEC $RES
+      ./autogen.sh >>buildlog.log
+      #RES=$?; CEC $RES
+      ./configure --enable-static --disable-shared --prefix=${SDL_EXPORT} >>buildlog.log
+      #RES=$?; CEC $RES
+      make >>buildlog.log
+      #RES=$?; CEC $RES
+      if ${INSTALL_LIBS}; then
+        make install >>buildlog.log
+        #RES=$?; CEC $RES
+        #chmod 755 /usr/local/bin
+        #RES=$?; CEC $RES
+      fi
+      cd ..
+    fi
+
+  fi
+
+  export CFLAGS="-I${SDL_EXPORT}/include/SDL2"
+  #export LDFLAGS="-L${SDL_EXPORT}/lib"
+  export LDFLAGS="-F${SDL_EXPORT}"
+}
+
 #if [ ! -f ${OPENSSL_SH} ]; then
 #    echo "Downloading openssl..."
 #    curl --create-dirs -o ${OPENSSL_DIR}/scripts/$(basename "$LOOP_TARGETS_URL") ${LOOP_TARGETS_URL}
@@ -294,14 +359,16 @@ export LDFLAGS="-L${OPENSSL_DIR}/lib ${OPTIMIZE_FLAG} ${DEBUG_FLAG}"
 echo ${OPENSSL_DIR}
 
 #configure="./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg"
-configure="./configure-macos --with-ssl=${OPENSSL_DIR}"
+configure="./configure-macos --with-ssl=${OPENSSL_DIR} --enable-sdl --with-sdl=${SDL_EXPORT}"
 
 
 
-cd ${PJSIP_DIR}
-echo "cd PJSIP_DIR: ${PJSIP_DIR}"
 
 function _build() {
+
+  cd ${PJSIP_DIR}
+  echo "cd PJSIP_DIR: ${PJSIP_DIR}"
+
   ARCH=$1
   LOG=${BUILD_DIR}/${ARCH}.log
 
@@ -310,7 +377,7 @@ function _build() {
 
   make distclean > ${LOG} 2>&1
   # ARCH="-arch ${ARCH}" ./configure-iphone --with-ssl=${OPENSSL_DIR} --disable-webrtc --disable-ffmpeg >> ${LOG} 2>&1
-  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} >> ${LOG} 2>&1
+  ARCH="-arch ${ARCH}" ./configure-macos --with-ssl=${OPENSSL_DIR} --enable-sdl --with-sdl=${SDL_EXPORT} >> ${LOG} 2>&1
   make dep >> ${LOG} 2>&1
   make clean >> ${LOG}
   make >> ${LOG} 2>&1
@@ -337,6 +404,8 @@ function x86_64() {
 function macos_64() {
   export DEVPATH="`xcrun -sdk macosx --show-sdk-platform-path`/Developer"
   #_build "x86_64 --target=x86_64-apple-ios13.0-macabi"
+
+  build_sdl
   _build "x86_64"
 }
 
